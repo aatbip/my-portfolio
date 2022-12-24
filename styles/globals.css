@@ -2,7 +2,10 @@
 
 @font-face {
   font-family: garalama;
-  src: url("../public/fonts/garalama/GARALAMA.ttf");
+  src: url("../public/fonts/GARALAMA.ttf");
+  src: url("../public/fonts/GARALAMA.eot");
+  src: url("../public//fonts/GARALAMA.woff");
+  src: url("../public/fonts/GARALAMA.woff2");
 }
 
 * {
