@@ -71,6 +71,7 @@ const InputBox: React.FC<IInputBox> = ({ links, content, from }) => {
           disabled={!isFocused ? true : false}
           ref={inputRef}
           autoFocus={false}
+          inputMode="none"
           value={linkText}
           onChange={(e) => {
             store.dispatch(setLinkText(e.target.value));
