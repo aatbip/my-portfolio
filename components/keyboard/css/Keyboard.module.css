@@ -1,0 +1,40 @@
+.keys_align {
+  display: flex;
+  gap: 10px;
+  line-height: 2em;
+}
+
+.keys_hover {
+  padding: 0px 4px;
+  align-items: center;
+}
+
+.keys_hover:hover {
+  background-color: var(--font-color);
+  color: #000;
+}
+
+.keys_margin {
+  margin-left: 15px;
+}
+
+.space_key {
+  margin: 20px auto;
+  width: 150px;
+  height: 20px;
+  background-color: var(--font-color);
+}
+
+.space_key:hover {
+  background-color: #000;
+  border: 2px solid var(--font-color);
+}
+
+.wrapper {
+  position: fixed;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  color: var(--font-color);
+  font-family: var(--font-type-heading);
+}

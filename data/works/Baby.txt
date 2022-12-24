@@ -1,0 +1,12 @@
+id:03
+heading:Baby
+github_link:something.something.com
+live_link:hello.com
+short_description:This project uses React Context API for state management and it's a simple demonstration of router-less content sharing application. Manage your own contents and share! You can do whatever you want to do in this app!
+description:Hey! I just want to share you about my new project. This is a next js app that i made for authentication and authorization. In this app, I want to practice how does it really work! 
+So, First thing first, I want to make my life cool! and do something with my life. hahaha... jokes apart!
+Thats the end.
+but i may come again.
+good bye.
+yours, 
+Ananta 

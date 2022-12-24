@@ -1,0 +1,53 @@
+.input {
+  padding: 8px 18px;
+  font-family: var(--font-type-text);
+  text-align: center;
+  border: none;
+  text-transform: uppercase;
+  background-color: var(--font-color);
+}
+
+.input_animated {
+  animation: input 1.5s ease-out infinite;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input:disabled {
+  background-color: #fff;
+  border: none;
+  padding: 8px 18px;
+}
+
+.input::placeholder {
+  font-family: var(--font-type-heading);
+}
+
+@keyframes input {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.1, 1.1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.links {
+  margin-top: 5px;
+  color: var(--font-color);
+  font-family: var(--font-type-heading);
+}
+
+.selected_link {
+  color: #ffff00;
+}
+
+.selected_link_font {
+  font-size: 30px;
+  transition: font-size 0.5s;
+}

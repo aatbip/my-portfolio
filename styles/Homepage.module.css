@@ -1,0 +1,25 @@
+.homepage {
+  text-align: center;
+  position: absolute;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  color: var(--font-color);
+  font-family: var(--font-type-heading);
+  line-height: 1.5em;
+  min-height: 220px;
+}
+
+.heading {
+  font-size: var(--font-size-heading);
+}
+
+.text {
+  font-size: var(--font-size-text);
+}
+
+/* @media only screen and (max-width: 450px) {
+  .homepage {
+    transform: translate(-50%, -80%) !important;
+  }
+} */
