@@ -2,6 +2,7 @@ import React from "react";
 import ContentList from "../../components/ContentList/ContentList";
 import InputBox from "../../components/InputBox/InputBox";
 import { IContent } from "../../interfaces/interface";
+import getContents from "../../lib/getContents";
 import {
   unsetLinkText,
   handleShowKeyboard,
@@ -38,8 +39,7 @@ const Work: React.FC<IProp> = ({ data }) => {
 export default Work;
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:3000/api/getcontents?type=works");
-  const data = await res.json();
+  const data = await getContents("works");
   return {
     props: {
       data: data,

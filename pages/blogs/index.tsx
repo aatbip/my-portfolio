@@ -2,7 +2,12 @@ import React from "react";
 import ContentList from "../../components/ContentList/ContentList";
 import InputBox from "../../components/InputBox/InputBox";
 import { IContent } from "../../interfaces/interface";
-import { handleShowKeyboard, unsetLinkText, unshowKeyboard } from "../../redux/input/inputSlice";
+import getContents from "../../lib/getContents";
+import {
+  handleShowKeyboard,
+  unsetLinkText,
+  unshowKeyboard,
+} from "../../redux/input/inputSlice";
 import store from "../../redux/store";
 import styles from "../works/css/Works.module.css";
 
@@ -11,13 +16,11 @@ interface IProp {
 }
 
 const Blog: React.FC<IProp> = ({ data }) => {
-
   React.useEffect(() => {
     store.dispatch(unsetLinkText());
-    store.dispatch(unshowKeyboard()); 
+    store.dispatch(unshowKeyboard());
+  }, []);
 
-  },[])
-  
   return (
     <div className={styles.wrapper}>
       <div className={styles.input_box}>
@@ -37,8 +40,8 @@ const Blog: React.FC<IProp> = ({ data }) => {
 export default Blog;
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:3000/api/getcontents?type=blogs");
-  const data = await res.json();
+
+  const data = await getContents("blogs");
   return {
     props: {
       data: data,

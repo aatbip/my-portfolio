@@ -1,21 +1,20 @@
 import React from "react";
 import { IContent } from "../../../interfaces/interface";
+import getContents from "../../../lib/getContents";
+import getOneContent from "../../../lib/getOneContent";
 
 interface IProp {
   data: IContent;
 }
 
 const BlogDetail: React.FC<IProp> = ({ data }) => {
-  console.log(data);
-  return <div>BlogDetail</div>;
+  return <div style={{ color: "#fff" }}>{data.description}</div>;
 };
 
 export default BlogDetail;
 
 export async function getStaticPaths() {
-  const res = await fetch("http://localhost:3000/api/getcontents?type=blogs");
-
-  const data = await res.json();
+  const data = await getContents("blogs");
   const paths = data.map((el: IContent) => {
     return {
       params: {
@@ -32,10 +31,8 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context: any) {
   const { params } = context;
-  const res = await fetch(
-    `http://localhost:3000/api/getonecontent?type=blogs&filename=${params.blog}.txt`
-  );
-  const data = await res.json();
+
+  const data = await getOneContent("blogs", `${params.blog}.txt`);
   return {
     props: {
       data: data,
