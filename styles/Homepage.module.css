@@ -18,8 +18,8 @@
   font-size: var(--font-size-text);
 }
 
-/* @media only screen and (max-width: 450px) {
+@media only screen and (max-width: 450px) {
   .homepage {
     transform: translate(-50%, -80%) !important;
   }
-} */
+}
