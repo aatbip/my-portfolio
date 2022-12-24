@@ -7,7 +7,7 @@ import Keyboard from "../components/keyboard/Keyboard";
 import localFont from "@next/font/local";
 
 const garalama = localFont({
-  src: "../public/fonts/GARALAMA.ttf",
+  src: "../public/fonts/GARALAMA.woff2",
   variable: "--font-type-heading",
 });
 

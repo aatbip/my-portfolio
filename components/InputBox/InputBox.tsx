@@ -57,7 +57,6 @@ const InputBox: React.FC<IInputBox> = ({ links, content, from }) => {
     if (!linkText) setIsFocused(false);
   }, [linkText]);
 
-
   return (
     <>
       <form
@@ -71,6 +70,7 @@ const InputBox: React.FC<IInputBox> = ({ links, content, from }) => {
           placeholder="press @ to start..."
           disabled={!isFocused ? true : false}
           ref={inputRef}
+          autoFocus={false}
           value={linkText}
           onChange={(e) => {
             store.dispatch(setLinkText(e.target.value));
