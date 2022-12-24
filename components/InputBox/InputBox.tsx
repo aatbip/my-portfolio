@@ -1,5 +1,4 @@
 import { AnimatePresence, motion } from "framer-motion";
-import Router from "next/router";
 import React from "react";
 import { useSelector } from "react-redux";
 import { IContent } from "../../interfaces/interface";
@@ -54,7 +53,7 @@ const InputBox: React.FC<IInputBox> = ({ links, content, from }) => {
   }, [isFocused]);
 
   React.useEffect(() => {
-    if (!linkText) setIsFocused(false);
+    if (!linkText) store.dispatch(setIsFocused(false));
   }, [linkText]);
 
   return (
@@ -78,10 +77,12 @@ const InputBox: React.FC<IInputBox> = ({ links, content, from }) => {
           }}
         />
         {isFocused && from === "home" && (
-          <p style={{ fontSize: "8px" }}>Type link and hit enter to navigate</p>
+          <p style={{ fontSize: "10px" }}>
+            Type link and hit enter to navigate
+          </p>
         )}
         {isFocused && (from === "works" || from === "blogs") && (
-          <p className={styles.links} style={{ fontSize: "8px" }}>
+          <p className={styles.links} style={{ fontSize: "10px" }}>
             Type title or links to navigate
           </p>
         )}

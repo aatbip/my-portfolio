@@ -1,5 +1,4 @@
 .circle {
-  background-color: var(--font-color);
   padding: 10px 10px;
   border-radius: 50%;
   position: fixed;
@@ -7,10 +6,12 @@
   z-index: 10;
   top: 52%;
   left: 62%;
-
-  box-shadow: rgba(255, 255, 255, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  background: radial-gradient(
+    circle at 50% 120%,
+    #43385e,
+    #0a0a0a 80%,
+    #000000 100%
+  );
 }
 
 .circle:hover {

@@ -74,7 +74,7 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
                 onClick={() => store.dispatch(keyboardUpdateLinkText("BS"))}
                 className={styles.keys_hover}
               >
-                &#8617;
+                <b> &#8617; </b>
               </div>
             </div>
             <div className={styles.keys_align}>
@@ -100,13 +100,7 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
                 <b>GO!</b>
               </div>
             </div>
-            <div className={`${styles.keys_align} ${styles.keys_margin}`}>
-              <div
-                onClick={() => store.dispatch(keyboardUpdateLinkText("@"))}
-                className={styles.keys_hover}
-              >
-                <b> &#64; </b>
-              </div>
+            <div className={`${styles.keys_align}`}>
               {keys.map((key, ind) => {
                 if (ind > 18)
                   return (
@@ -121,6 +115,12 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
                     </div>
                   );
               })}
+              <div
+                onClick={() => store.dispatch(keyboardUpdateLinkText("@"))}
+                className={styles.keys_hover}
+              >
+                <b> &#64; </b>
+              </div>
             </div>
             <div
               onClick={() => store.dispatch(keyboardUpdateLinkText("Space"))}

@@ -64,7 +64,7 @@ const ContentList: React.FC<IProp> = ({ data, from }) => {
                   ? styles.selected_short_description
                   : null
               }`}
-              style={{ fontSize: "10px" }}
+              style={{ fontSize: "12px" }}
             >
               {data.date}
             </p>

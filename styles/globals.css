@@ -15,10 +15,10 @@
 }
 
 :root {
-  --font-size-heading: 25px;
-  --font-size-text: 14px;
+  --font-size-heading: 35px;
+  --font-size-text: 18px;
   --font-type-text: "Plus Jakarta Sans", sans-serif;
-  --font-type-heading: garalama;
+  /* --font-type-heading: garalama; */
   --font-color: #e1dbdb;
   --bg-color: #000000;
 }

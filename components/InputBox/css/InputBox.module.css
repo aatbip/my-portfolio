@@ -1,5 +1,5 @@
 .input {
-  padding: 8px 18px;
+  padding: 12px 22px;
   font-family: var(--font-type-text);
   text-align: center;
   border: none;
@@ -18,11 +18,12 @@
 .input:disabled {
   background-color: #fff;
   border: none;
-  padding: 8px 18px;
+  padding: 12px 22px;
 }
 
 .input::placeholder {
   font-family: var(--font-type-heading);
+  font-size: 15px;
 }
 
 @keyframes input {
@@ -41,6 +42,7 @@
   margin-top: 5px;
   color: var(--font-color);
   font-family: var(--font-type-heading);
+  font-size: 20px;
 }
 
 .selected_link {
