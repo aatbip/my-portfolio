@@ -12,16 +12,7 @@ const Home: React.FC = () => {
   }, []);
   return (
     <>
-      <div
-        style={
-          isMobile
-            ? {
-                transform: "translate(-50%, -80%)",
-              }
-            : {}
-        }
-        className={styles.homepage}
-      >
+      <div className={styles.homepage}>
         <p className={styles.heading}>Hello, I am Ananta Bipal</p>
         <p className={styles.text}>a software engineer</p>
         <div
