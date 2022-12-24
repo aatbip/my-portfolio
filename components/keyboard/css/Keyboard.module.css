@@ -1,14 +1,16 @@
 .keys_align {
   display: flex;
-  gap: 10px;
   line-height: 2em;
-  padding: 10px 10px;
-  font-size: 20px;
+  padding: 8px 8px;
+  font-size: 18px;
+  width: 100%; 
 }
 
 .keys_hover {
   padding: 0px 4px;
   align-items: center;
+  width: 100%;
+  text-align: center;
 }
 
 .keys_hover:hover {
@@ -36,12 +38,17 @@
   position: fixed;
   top: 100%;
   left: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%; 
   transform: translate(-50%, -100%);
   color: var(--font-color);
   font-family: var(--font-type-heading);
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
+  z-index: 100;
 }
 
 @keyframes gradient {
