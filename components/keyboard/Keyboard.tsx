@@ -47,7 +47,6 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
   const [captureSelectedKey, setCaptureSelectedKey] = React.useState<
     number | null
   >();
-  console.log(captureSelectedKey);
   const { showKeyboard, linkText } = useSelector(selectInput);
   return (
     <>
@@ -64,26 +63,55 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
               {keys.map((key, ind) => {
                 if (ind > 9) return;
                 return (
-                  <div
-                    onClick={() => store.dispatch(keyboardUpdateLinkText(key))}
-                    key={ind}
-                    className={`${styles.keys_hover} ${
-                      captureSelectedKey === ind ? styles.selected_key : ""
-                    }`}
-                    onTouchStartCapture={() => setCaptureSelectedKey(ind)}
-                    onTouchEndCapture={() => setCaptureSelectedKey(null)}
-                  >
-                    {key}
-                  </div>
+                  <>
+                    <div
+                      key={ind}
+                      onTouchStart={() => setCaptureSelectedKey(ind)}
+                      onClick={() =>
+                        store.dispatch(keyboardUpdateLinkText(key))
+                      }
+                      className={`${styles.keys_hover} `}
+                      style={
+                        captureSelectedKey === ind
+                          ? {
+                              background: "var(--font-color)",
+                              color: "#000",
+                              position: "relative",
+                              boxShadow: "5px 10px #888888",
+                            }
+                          : {
+                              background: "",
+                              color: "",
+                            }
+                      }
+                      onTouchEnd={() => setCaptureSelectedKey(null)}
+                    >
+                      {key}
+
+                      {captureSelectedKey === ind && (
+                        <div className={styles.capture_selected}>{key}</div>
+                      )}
+                    </div>
+                  </>
                 );
               })}
               <div
                 onClick={() => store.dispatch(keyboardUpdateLinkText("BS"))}
-                className={`${styles.keys_hover} ${
-                  captureSelectedKey === 99 ? styles.selected_key : ""
-                }`}
+                className={`${styles.keys_hover}`}
                 onTouchStartCapture={() => setCaptureSelectedKey(99)}
                 onTouchEndCapture={() => setCaptureSelectedKey(null)}
+                style={
+                  captureSelectedKey === 99
+                    ? {
+                        background: "var(--font-color)",
+                        color: "#000",
+                        boxShadow: "5px 10px #888888",
+                      }
+                    : {
+                        background: "",
+                        color: "",
+                      }
+                }
               >
                 <b> &#8617; </b>
               </div>
@@ -97,24 +125,49 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
                       onClick={() =>
                         store.dispatch(keyboardUpdateLinkText(key))
                       }
-                      className={`${styles.keys_hover} ${
-                        captureSelectedKey === ind ? styles.selected_key : ""
-                      }`}
+                      className={`${styles.keys_hover}`}
                       onTouchStartCapture={() => setCaptureSelectedKey(ind)}
                       onTouchEndCapture={() => setCaptureSelectedKey(null)}
                       key={ind}
+                      style={
+                        captureSelectedKey === ind
+                          ? {
+                              background: "var(--font-color)",
+                              color: "#000",
+                              position: "relative",
+                              boxShadow: "5px 10px #888888",
+                            }
+                          : {
+                              background: "",
+                              color: "",
+                            }
+                      }
                     >
                       {key}
+
+                      {captureSelectedKey === ind && (
+                        <div className={styles.capture_selected}>{key}</div>
+                      )}
                     </div>
                   );
               })}
               <div
                 onClick={(e) => store.dispatch(handleSubmit(e))}
-                className={`${styles.keys_hover} ${
-                  captureSelectedKey === 100 ? styles.selected_key : ""
-                }`}
+                className={`${styles.keys_hover}`}
                 onTouchStartCapture={() => setCaptureSelectedKey(100)}
                 onTouchEndCapture={() => setCaptureSelectedKey(null)}
+                style={
+                  captureSelectedKey === 100
+                    ? {
+                        background: "var(--font-color)",
+                        color: "#000",
+                        boxShadow: "5px 10px #888888",
+                      }
+                    : {
+                        background: "",
+                        color: "",
+                      }
+                }
               >
                 <b>GO!</b>
               </div>
@@ -127,31 +180,75 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
                       onClick={() =>
                         store.dispatch(keyboardUpdateLinkText(key))
                       }
-                      className={`${styles.keys_hover} ${
-                        captureSelectedKey === ind ? styles.selected_key : ""
-                      }`}
+                      className={`${styles.keys_hover}`}
                       onTouchStartCapture={() => setCaptureSelectedKey(ind)}
                       onTouchEndCapture={() => setCaptureSelectedKey(null)}
                       key={ind}
+                      style={
+                        captureSelectedKey === ind
+                          ? {
+                              background: "var(--font-color)",
+                              color: "#000",
+                              position: "relative",
+                              boxShadow: "5px 10px #888888",
+                            }
+                          : {
+                              background: "",
+                              color: "",
+                            }
+                      }
                     >
                       {key}
+
+                      {captureSelectedKey === ind && (
+                        <div className={styles.capture_selected}>{key}</div>
+                      )}
                     </div>
                   );
               })}
               <div
                 onClick={() => store.dispatch(keyboardUpdateLinkText("@"))}
-                className={`${styles.keys_hover} ${
-                  captureSelectedKey === 101 ? styles.selected_key : ""
-                }`}
+                className={`${styles.keys_hover}`}
                 onTouchStartCapture={() => setCaptureSelectedKey(101)}
                 onTouchEndCapture={() => setCaptureSelectedKey(null)}
+                style={
+                  captureSelectedKey === 101
+                    ? {
+                        background: "var(--font-color)",
+                        color: "#000",
+                        position: "relative",
+                        boxShadow: "5px 10px #888888",
+                      }
+                    : {
+                        background: "",
+                        color: "",
+                      }
+                }
               >
                 <b> &#64; </b>
+
+                {captureSelectedKey === 101 && (
+                  <div className={styles.capture_selected}>
+                    <b> &#64; </b>
+                  </div>
+                )}
               </div>
             </div>
             <div
               onClick={() => store.dispatch(keyboardUpdateLinkText("Space"))}
               className={styles.space_key}
+              onTouchStartCapture={() => setCaptureSelectedKey(102)}
+              onTouchEndCapture={() => setCaptureSelectedKey(null)}
+              style={
+                captureSelectedKey === 102
+                  ? {
+                      opacity: "0.8",
+                      boxShadow: "5px 10px #888888",
+                    }
+                  : {
+                      opacity: "",
+                    }
+              }
             ></div>
           </motion.div>
         )}

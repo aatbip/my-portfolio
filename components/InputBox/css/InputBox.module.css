@@ -5,6 +5,10 @@
   border: none;
   text-transform: uppercase;
   background-color: var(--font-color);
+  box-shadow: -2px -2px 86px 5px rgba(255,255,255,0.55);
+-webkit-box-shadow: -2px -2px 86px 5px rgba(255,255,255,0.55);
+-moz-box-shadow: -2px -2px 86px 5px rgba(255,255,255,0.55);
+  
 }
 
 .input_animated {

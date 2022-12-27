@@ -11,11 +11,6 @@
   text-align: center;
 }
 
-.selected_key:hover {
-  background-color: var(--font-color);
-  color: #000;
-}
-
 .space_key {
   margin: 20px auto;
   width: 60%;
@@ -23,9 +18,15 @@
   background-color: var(--font-color);
 }
 
-.space_key:hover {
-  opacity: 0.8;
-  border: 2px solid var(--font-color);
+.capture_selected {
+  position: absolute;
+  top: -70px;
+  left: 20px;
+  color: #000;
+  background: var(--font-color);
+  width: 50px;
+  padding: 1px 0px;
+  text-align: center;
 }
 
 .wrapper {
