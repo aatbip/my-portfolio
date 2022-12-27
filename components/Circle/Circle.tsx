@@ -5,7 +5,7 @@ import styles from "./css/Circle.module.css";
 import keyboardImage from "../../public/keyboard.svg";
 import store from "../../redux/store";
 import { handleShowKeyboard } from "../../redux/input/inputSlice";
-import { MobileView } from "react-device-detect";
+import { isMobile, MobileView } from "react-device-detect";
 
 interface IProp {
   children: React.ReactNode;
@@ -29,7 +29,7 @@ const Circle: React.FC<IProp> = ({ children }) => {
 
   return (
     <>
-      <MobileView>
+      {/* <MobileView> */}
         <Draggable nodeRef={nodeRef} onStart={handleStart} onStop={handleStop}>
           <div
             onClick={() => store.dispatch(handleShowKeyboard())}
@@ -46,7 +46,7 @@ const Circle: React.FC<IProp> = ({ children }) => {
             />
           </div>
         </Draggable>
-      </MobileView>
+      {/* </MobileView> */}
 
       {children}
     </>

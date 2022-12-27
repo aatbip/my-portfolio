@@ -11,7 +11,7 @@
   text-align: center;
 }
 
-.keys_hover:hover {
+.selected_key:hover {
   background-color: var(--font-color);
   color: #000;
 }

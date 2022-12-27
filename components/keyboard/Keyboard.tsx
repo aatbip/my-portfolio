@@ -44,7 +44,10 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
     "N",
     "M",
   ]);
-
+  const [captureSelectedKey, setCaptureSelectedKey] = React.useState<
+    number | null
+  >();
+  console.log(captureSelectedKey);
   const { showKeyboard, linkText } = useSelector(selectInput);
   return (
     <>
@@ -63,8 +66,12 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
                 return (
                   <div
                     onClick={() => store.dispatch(keyboardUpdateLinkText(key))}
-                    className={styles.keys_hover}
                     key={ind}
+                    className={`${styles.keys_hover} ${
+                      captureSelectedKey === ind ? styles.selected_key : ""
+                    }`}
+                    onMouseDownCapture={() => setCaptureSelectedKey(ind)}
+                    onMouseUpCapture={() => setCaptureSelectedKey(null)}
                   >
                     {key}
                   </div>
@@ -72,7 +79,11 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
               })}
               <div
                 onClick={() => store.dispatch(keyboardUpdateLinkText("BS"))}
-                className={styles.keys_hover}
+                className={`${styles.keys_hover} ${
+                  captureSelectedKey === 99 ? styles.selected_key : ""
+                }`}
+                onMouseDownCapture={() => setCaptureSelectedKey(99)}
+                onMouseUpCapture={() => setCaptureSelectedKey(null)}
               >
                 <b> &#8617; </b>
               </div>
@@ -86,7 +97,11 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
                       onClick={() =>
                         store.dispatch(keyboardUpdateLinkText(key))
                       }
-                      className={styles.keys_hover}
+                      className={`${styles.keys_hover} ${
+                        captureSelectedKey === ind ? styles.selected_key : ""
+                      }`}
+                      onMouseDownCapture={() => setCaptureSelectedKey(ind)}
+                      onMouseUpCapture={() => setCaptureSelectedKey(null)}
                       key={ind}
                     >
                       {key}
@@ -95,7 +110,11 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
               })}
               <div
                 onClick={(e) => store.dispatch(handleSubmit(e))}
-                className={styles.keys_hover}
+                className={`${styles.keys_hover} ${
+                  captureSelectedKey === 100 ? styles.selected_key : ""
+                }`}
+                onMouseDownCapture={() => setCaptureSelectedKey(100)}
+                onMouseUpCapture={() => setCaptureSelectedKey(null)}
               >
                 <b>GO!</b>
               </div>
@@ -108,7 +127,11 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
                       onClick={() =>
                         store.dispatch(keyboardUpdateLinkText(key))
                       }
-                      className={styles.keys_hover}
+                      className={`${styles.keys_hover} ${
+                        captureSelectedKey === ind ? styles.selected_key : ""
+                      }`}
+                      onMouseDownCapture={() => setCaptureSelectedKey(ind)}
+                      onMouseUpCapture={() => setCaptureSelectedKey(null)}
                       key={ind}
                     >
                       {key}
@@ -117,7 +140,11 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
               })}
               <div
                 onClick={() => store.dispatch(keyboardUpdateLinkText("@"))}
-                className={styles.keys_hover}
+                className={`${styles.keys_hover} ${
+                  captureSelectedKey === 101 ? styles.selected_key : ""
+                }`}
+                onMouseDownCapture={() => setCaptureSelectedKey(101)}
+                onMouseUpCapture={() => setCaptureSelectedKey(null)}
               >
                 <b> &#64; </b>
               </div>
