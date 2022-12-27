@@ -29,7 +29,7 @@ const Circle: React.FC<IProp> = ({ children }) => {
 
   return (
     <>
-      {/* <MobileView> */}
+      <MobileView>
         <Draggable nodeRef={nodeRef} onStart={handleStart} onStop={handleStop}>
           <div
             onClick={() => store.dispatch(handleShowKeyboard())}
@@ -46,7 +46,7 @@ const Circle: React.FC<IProp> = ({ children }) => {
             />
           </div>
         </Draggable>
-      {/* </MobileView> */}
+      </MobileView>
 
       {children}
     </>

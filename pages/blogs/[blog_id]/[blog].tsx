@@ -47,8 +47,8 @@ const BlogDetail: React.FC<IProp> = ({ data }) => {
           <p>{data.short_description}</p>
         </div>
         <div className={styles.description_container}>
-          {data.description.map((el) => {
-            return <p>{el}</p>;
+          {data.description.map((el, ind) => {
+            return <p key={ind}>{el}</p>;
           })}
         </div>
       </div>

@@ -42,9 +42,10 @@ const WorkDetail: React.FC<IProp> = ({ data }) => {
         <p className={styles.heading}>{data.heading}</p>
         <div className={styles.link_container}>
           <p>
-            {"github repo".split("").map((el) => {
+            {"github repo".split("").map((el, ind) => {
               return (
                 <span
+                  key={ind}
                   className={`${
                     linkText
                       .toUpperCase()
@@ -68,9 +69,10 @@ const WorkDetail: React.FC<IProp> = ({ data }) => {
           </p>
           {data.live_link && (
             <p>
-              {"live link".split("").map((el) => {
+              {"live link".split("").map((el, ind) => {
                 return (
                   <span
+                    key={ind}
                     className={`${
                       linkText
                         .toUpperCase()
@@ -99,8 +101,8 @@ const WorkDetail: React.FC<IProp> = ({ data }) => {
           <p>{data.short_description}</p>
         </div>
         <div className={styles.description_container}>
-          {data.description.map((el) => {
-            return <p>{el}</p>;
+          {data.description.map((el, ind) => {
+            return <p key={ind}>{el}</p>;
           })}
         </div>
       </div>

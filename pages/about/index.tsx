@@ -14,7 +14,7 @@ const About = () => {
   return (
     <div className={styles.container}>
       <div className={styles.input_box}>
-        <InputBox links={["home", "blogs", "works"]} from={"about-page"} />
+        <InputBox links={["home", "blogs", "works"]} from="about-page" />
       </div>
       <div className={styles.wrapper}>
         <div className={styles.content_container}>
@@ -46,7 +46,7 @@ const About = () => {
             >
               <b>
                 <i>
-                  Type "resume" to have my resume. Type "github" or "linkedin"
+                  Type &quot;resume&quot; to have my resume. Type &quot;github&quot; or &quot;linkedin&quot;
                   to visit my respective profiles.
                 </i>
               </b>
