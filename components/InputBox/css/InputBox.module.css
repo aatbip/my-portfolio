@@ -5,10 +5,9 @@
   border: none;
   text-transform: uppercase;
   background-color: var(--font-color);
-  box-shadow: -2px -2px 86px 5px rgba(255,255,255,0.55);
--webkit-box-shadow: -2px -2px 86px 5px rgba(255,255,255,0.55);
--moz-box-shadow: -2px -2px 86px 5px rgba(255,255,255,0.55);
-  
+  box-shadow: -2px -2px 86px 5px rgba(255, 255, 255, 0.55);
+  -webkit-box-shadow: -2px -2px 86px 5px rgba(255, 255, 255, 0.55);
+  -moz-box-shadow: -2px -2px 86px 5px rgba(255, 255, 255, 0.55);
 }
 
 .input_animated {
@@ -26,6 +25,17 @@
 }
 
 .input::placeholder {
+  font-family: var(--font-type-heading);
+  font-size: 15px;
+}
+
+.input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  font-family: var(--font-type-heading);
+  font-size: 15px;
+}
+.input::-moz-placeholder {
+  /* Firefox 19+ */
   font-family: var(--font-type-heading);
   font-size: 15px;
 }

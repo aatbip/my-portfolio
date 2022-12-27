@@ -1,0 +1,75 @@
+.container {
+  max-width: 1950px;
+  width: 100%;
+  color: var(--font-color);
+  margin: 0 auto;
+}
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+  padding: 2em 0em;
+  font-family: var(--font-type-text);
+  font-size: var(--font-size-text);
+}
+.heading {
+  font-family: var(--font-type-heading);
+  font-size: calc(var(--font-size-heading) * 2);
+}
+
+@media only screen and (max-width: 450px) {
+  .heading {
+    font-size: calc(var(--font-size-heading) * 1.5);
+  }
+}
+
+.input_box {
+  text-align: right;
+  width: 90%;
+  position: sticky;
+  top: 20px;
+  height: 90px;
+}
+
+.link_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 3em;
+  padding: 20px 0px;
+  height: 65px;
+}
+
+.link_container p {
+  font-family: var(--font-type-heading);
+  text-decoration: underline;
+}
+
+.selected_link {
+  color: #ffff00;
+}
+
+.selected_link_font {
+  color: #ffff00;
+  font-size: calc(var(--font-size-text) + 8px);
+  transition: font-size 500ms;
+}
+
+.short_description_container {
+  display: flex;
+  gap: 10px;
+  max-width: 90%;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 30px 0px;
+  line-height: 1.5em;
+}
+
+.description_container {
+  padding: 30px 0px;
+  line-height: 1.5em;
+}
+
+.description_container p {
+  padding-top: 15px;
+}

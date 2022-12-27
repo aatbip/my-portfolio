@@ -25,9 +25,10 @@
     transform: translate(-50%, -120%);
     top: 40%;
     height: 150px;
+    width: 100%; 
   }
   .heading {
-    font-size: 25px;
+    font-size: 24px;
   }
 
   .text {

@@ -9,6 +9,7 @@ import {
   setFromAndContent,
   setIsFocused,
   setLinkText,
+  setURL,
   unsetLinkText,
 } from "../../redux/input/inputSlice";
 import store from "../../redux/store";
@@ -16,13 +17,17 @@ import styles from "./css/InputBox.module.css";
 
 interface IInputBox {
   links: string[];
-  content?: IContent[];
+  content?: IContent[] | IContent;
   from: string;
+  url?: {
+    github_link?: string;
+    live_link?: string;
+  };
 }
 interface KeyboardEvent {
   key: string;
 }
-const InputBox: React.FC<IInputBox> = ({ links, content, from }) => {
+const InputBox: React.FC<IInputBox> = ({ links, content, from, url }) => {
   const inputRef = React.useRef<HTMLInputElement>(null);
   const { linkText, isFocused } = useSelector(selectInput);
 
@@ -38,6 +43,9 @@ const InputBox: React.FC<IInputBox> = ({ links, content, from }) => {
 
   React.useEffect(() => {
     store.dispatch(setFromAndContent({ from, content }));
+    if (url) {
+      store.dispatch(setURL(url));
+    }
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
@@ -84,6 +92,11 @@ const InputBox: React.FC<IInputBox> = ({ links, content, from }) => {
         {isFocused && (from === "works" || from === "blogs") && (
           <p className={styles.links} style={{ fontSize: "10px" }}>
             Type title or links to navigate
+          </p>
+        )}
+         {isFocused && (from === "details-page") && (
+          <p className={styles.links} style={{ fontSize: "10px" }}>
+            Type links to navigate
           </p>
         )}
       </form>

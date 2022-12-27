@@ -44,10 +44,13 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
     "N",
     "M",
   ]);
+
   const [captureSelectedKey, setCaptureSelectedKey] = React.useState<
     number | null
   >();
+
   const { showKeyboard, linkText } = useSelector(selectInput);
+
   return (
     <>
       <AnimatePresence>
@@ -66,7 +69,7 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
                   <>
                     <div
                       key={ind}
-                      onTouchStart={() => setCaptureSelectedKey(ind)}
+                      onTouchStartCapture={() => setCaptureSelectedKey(ind)}
                       onClick={() =>
                         store.dispatch(keyboardUpdateLinkText(key))
                       }
@@ -84,12 +87,12 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
                               color: "",
                             }
                       }
-                      onTouchEnd={() => setCaptureSelectedKey(null)}
+                      onTouchEndCapture={() => setCaptureSelectedKey(null)}
                     >
                       {key}
 
                       {captureSelectedKey === ind && (
-                        <div className={styles.capture_selected}>{key}</div>
+                        <div key={ind} className={styles.capture_selected}>{key}</div>
                       )}
                     </div>
                   </>
@@ -98,7 +101,9 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
               <div
                 onClick={() => store.dispatch(keyboardUpdateLinkText("BS"))}
                 className={`${styles.keys_hover}`}
-                onTouchStartCapture={() => setCaptureSelectedKey(99)}
+                onTouchStartCapture={() => {
+                  setCaptureSelectedKey(99);
+                }}
                 onTouchEndCapture={() => setCaptureSelectedKey(null)}
                 style={
                   captureSelectedKey === 99
@@ -146,7 +151,7 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
                       {key}
 
                       {captureSelectedKey === ind && (
-                        <div className={styles.capture_selected}>{key}</div>
+                        <div key={ind} className={styles.capture_selected}>{key}</div>
                       )}
                     </div>
                   );
@@ -169,10 +174,10 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
                       }
                 }
               >
-                <b>GO!</b>
+                <b>GO</b>
               </div>
             </div>
-            <div className={`${styles.keys_align}`}>
+            <div className={`${styles.keys_align} ${styles.keys_margin}`}>
               {keys.map((key, ind) => {
                 if (ind > 18)
                   return (
@@ -180,7 +185,7 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
                       onClick={() =>
                         store.dispatch(keyboardUpdateLinkText(key))
                       }
-                      className={`${styles.keys_hover}`}
+                      className={`${styles.keys_hover} `}
                       onTouchStartCapture={() => setCaptureSelectedKey(ind)}
                       onTouchEndCapture={() => setCaptureSelectedKey(null)}
                       key={ind}
@@ -201,7 +206,7 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
                       {key}
 
                       {captureSelectedKey === ind && (
-                        <div className={styles.capture_selected}>{key}</div>
+                        <div key={ind} className={styles.capture_selected}>{key}</div>
                       )}
                     </div>
                   );

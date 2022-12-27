@@ -26,3 +26,9 @@
 body {
   background-color: var(--bg-color);
 }
+
+a {
+  text-decoration: none;
+  color: var(--font-color);
+  text-decoration: underline;
+}

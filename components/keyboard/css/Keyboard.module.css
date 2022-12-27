@@ -5,6 +5,11 @@
   width: 100%;
 }
 
+.keys_margin {
+  width: 95%; 
+  margin-left: 10px; 
+}
+
 .keys_hover {
   align-items: center;
   width: 100%;

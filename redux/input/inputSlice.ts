@@ -3,12 +3,18 @@ import Router from "next/router";
 import { IContent } from "../../interfaces/interface";
 import { RootState } from "../store";
 
+type url = {
+  github_link: string;
+  live_link: string;
+};
+
 interface IInitialState {
   linkText: string;
   isFocused: boolean;
   showKeyboard: boolean;
   from: string;
   content: IContent[];
+  url: url;
 }
 
 const initialState: IInitialState = {
@@ -17,6 +23,10 @@ const initialState: IInitialState = {
   showKeyboard: false,
   from: "",
   content: [],
+  url: {
+    github_link: "",
+    live_link: "",
+  },
 };
 
 const inputSlice = createSlice({
@@ -29,6 +39,13 @@ const inputSlice = createSlice({
     setFromAndContent: (state, action) => {
       state.content = action.payload.content;
       state.from = action.payload.from;
+    },
+    setURL: (state, action) => {
+      state.url = {
+        github_link: action.payload.github_link,
+        live_link: action.payload.live_link,
+      };
+      console.log(state.url);
     },
     unsetLinkText: (state) => {
       state.linkText = "";
@@ -102,6 +119,30 @@ const inputSlice = createSlice({
             `/blogs/${link[0]?.id}/${link[0]?.heading.replace(/\s+/g, "")}`
           );
       }
+
+      if (state.url) {
+        if (
+          _link.toUpperCase().includes("GITHUBREPO") ||
+          _link.toUpperCase().includes("GITHUB REPO")
+        )
+          window.open(`https://${state.url.github_link}`, "blank");
+
+        if (
+          _link.toUpperCase().includes("LIVE LINK") ||
+          _link.toUpperCase().includes("LIVELINK")
+        )
+          window.open(`https://${state.url.github_link}`, "blank");
+      }
+
+      if (state.from === "about-page") {
+        if (_link === "github")
+          window.open("https://www.github.com/aatbip", "blank");
+
+        if (_link === "linkedin")
+          window.open("https://www.linkedin.com/in/anantabipal");
+
+        if (_link === "resume") window.open("/file/resume.pdf", "download");
+      }
     },
   },
 });
@@ -111,6 +152,7 @@ export const selectInput = (state: RootState) => state.input;
 export const {
   setLinkText,
   setFromAndContent,
+  setURL,
   unsetLinkText,
   handleShowKeyboard,
   unshowKeyboard,

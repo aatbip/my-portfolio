@@ -20,6 +20,7 @@ const getContents = async (type: string) => {
       description: [],
     };
     let desc: string[] = [];
+    let img: string[] = [];
     let arr = myFile.split("\n");
     for (let i = 0; i < arr.length; i++) {
       if (arr[i].split(":")[0] === "id") {
