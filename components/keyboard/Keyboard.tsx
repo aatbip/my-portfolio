@@ -70,8 +70,8 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
                     className={`${styles.keys_hover} ${
                       captureSelectedKey === ind ? styles.selected_key : ""
                     }`}
-                    onPointerDownCapture={() => setCaptureSelectedKey(ind)}
-                    onPointerUpCapture={() => setCaptureSelectedKey(null)}
+                    onTouchStartCapture={() => setCaptureSelectedKey(ind)}
+                    onTouchEndCapture={() => setCaptureSelectedKey(null)}
                   >
                     {key}
                   </div>
@@ -82,8 +82,8 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
                 className={`${styles.keys_hover} ${
                   captureSelectedKey === 99 ? styles.selected_key : ""
                 }`}
-                onPointerDownCapture={() => setCaptureSelectedKey(99)}
-                onPointerUpCapture={() => setCaptureSelectedKey(null)}
+                onTouchStartCapture={() => setCaptureSelectedKey(99)}
+                onTouchEndCapture={() => setCaptureSelectedKey(null)}
               >
                 <b> &#8617; </b>
               </div>
@@ -100,8 +100,8 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
                       className={`${styles.keys_hover} ${
                         captureSelectedKey === ind ? styles.selected_key : ""
                       }`}
-                      onPointerDownCapture={() => setCaptureSelectedKey(ind)}
-                      onPointerUpCapture={() => setCaptureSelectedKey(null)}
+                      onTouchStartCapture={() => setCaptureSelectedKey(ind)}
+                      onTouchEndCapture={() => setCaptureSelectedKey(null)}
                       key={ind}
                     >
                       {key}
@@ -113,8 +113,8 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
                 className={`${styles.keys_hover} ${
                   captureSelectedKey === 100 ? styles.selected_key : ""
                 }`}
-                onPointerDownCapture={() => setCaptureSelectedKey(100)}
-                onPointerUpCapture={() => setCaptureSelectedKey(null)}
+                onTouchStartCapture={() => setCaptureSelectedKey(100)}
+                onTouchEndCapture={() => setCaptureSelectedKey(null)}
               >
                 <b>GO!</b>
               </div>
@@ -130,8 +130,8 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
                       className={`${styles.keys_hover} ${
                         captureSelectedKey === ind ? styles.selected_key : ""
                       }`}
-                      onPointerDownCapture={() => setCaptureSelectedKey(ind)}
-                      onPointerUpCapture={() => setCaptureSelectedKey(null)}
+                      onTouchStartCapture={() => setCaptureSelectedKey(ind)}
+                      onTouchEndCapture={() => setCaptureSelectedKey(null)}
                       key={ind}
                     >
                       {key}
@@ -143,8 +143,8 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
                 className={`${styles.keys_hover} ${
                   captureSelectedKey === 101 ? styles.selected_key : ""
                 }`}
-                onPointerDownCapture={() => setCaptureSelectedKey(101)}
-                onPointerUpCapture={() => setCaptureSelectedKey(null)}
+                onTouchStartCapture={() => setCaptureSelectedKey(101)}
+                onTouchEndCapture={() => setCaptureSelectedKey(null)}
               >
                 <b> &#64; </b>
               </div>
