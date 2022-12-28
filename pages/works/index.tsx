@@ -17,6 +17,7 @@ interface IProp {
 }
 
 const Work: React.FC<IProp> = ({ data }) => {
+
   React.useEffect(() => {
     store.dispatch(unsetLinkText());
     store.dispatch(unshowKeyboard());

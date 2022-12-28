@@ -1,3 +1,4 @@
+import { Markup } from "interweave";
 import Head from "next/head";
 import React from "react";
 import { useSelector } from "react-redux";
@@ -53,7 +54,11 @@ const BlogDetail: React.FC<IProp> = ({ data }) => {
           </div>
           <div className={styles.description_container}>
             {data.description.map((el, ind) => {
-              return <p key={ind}>{el}</p>;
+              return (
+                <p key={ind}>
+                  <Markup content={el} />
+                </p>
+              );
             })}
           </div>
         </div>

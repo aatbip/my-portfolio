@@ -5,6 +5,7 @@ import store from "../redux/store";
 import Circle from "../components/Circle/Circle";
 import Keyboard from "../components/keyboard/Keyboard";
 import localFont from "@next/font/local";
+import Head from "next/head";
 
 const garalama = localFont({
   src: "../public/fonts/GARALAMA.ttf",
@@ -17,6 +18,22 @@ export default function App({ Component, pageProps }: AppProps) {
       <div className={`${garalama.variable}`}>
         <Circle>
           <Keyboard>
+            <Head>
+              <link rel="favicon" href="/favicon.ico" />
+              <meta
+                name="viewport"
+                content="initial-scale=1.0, width=device-width"
+              />
+              <meta
+                name="description"
+                content="Portfolio of Ananta Bipal Subedi | anantabipal.dev"
+              />
+              <meta
+                name="og:title"
+                property="og:title"
+                content="Portfolio of Ananta Bipal Subedi | anantabipal.dev"
+              />
+            </Head>
             <Component {...pageProps} />
           </Keyboard>
         </Circle>

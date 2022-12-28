@@ -5,5 +5,6 @@ export interface IContent {
   github_link: string;
   live_link: string;
   short_description: string;
+  images: string; 
   description: string[];
 }

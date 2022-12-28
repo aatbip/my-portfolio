@@ -12,6 +12,7 @@ interface IInitialState {
   linkText: string;
   isFocused: boolean;
   showKeyboard: boolean;
+  showModal: boolean;
   from: string;
   content: IContent[];
   url: url;
@@ -21,6 +22,7 @@ const initialState: IInitialState = {
   linkText: "",
   isFocused: false,
   showKeyboard: false,
+  showModal: false,
   from: "",
   content: [],
   url: {
@@ -57,6 +59,11 @@ const inputSlice = createSlice({
       state.linkText = "";
       if (state.isFocused) state.isFocused = !state.isFocused;
     },
+
+    closeModal: (state) => {
+      state.showModal = false;
+    },
+
     unshowKeyboard: (state) => {
       state.showKeyboard = false;
       state.linkText = "";
@@ -120,6 +127,8 @@ const inputSlice = createSlice({
       }
 
       if (state.url) {
+        if (_link === "images") state.showModal = true;
+
         if (
           _link.toUpperCase().includes("GITHUBREPO") ||
           _link.toUpperCase().includes("GITHUB REPO")
@@ -130,7 +139,7 @@ const inputSlice = createSlice({
           _link.toUpperCase().includes("LIVE LINK") ||
           _link.toUpperCase().includes("LIVELINK")
         )
-          window.open(`https://${state.url.github_link}`, "blank");
+          window.open(`https://${state.url.live_link}`, "blank");
       }
 
       if (state.from === "about-page") {
@@ -154,6 +163,7 @@ export const {
   setURL,
   unsetLinkText,
   handleShowKeyboard,
+  closeModal, 
   unshowKeyboard,
   keyboardUpdateLinkText,
   setIsFocused,

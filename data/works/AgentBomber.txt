@@ -1,0 +1,15 @@
+id:01
+heading:Agent Bomber
+github_link:github.com/aatbip/Fun-Projects/tree/main/final-project/Agent-Bomber
+live_link:aatbip.github.io/Fun-Projects/final-project/Agent-Bomber/index.html
+short_description:Agent Bomber is a browser-based game developed in JavaScript and HTML/CSS. It's inspired by Bomberman and Pacman. The game was written as a final project during my internship at Leapfrog Technology.  
+images:agent-bomber-1.png agent-bomber-2.png
+description:Agent Bomber is the first interactive game that I authored and I still love to play it every once in a while. Developing Agent Bomber was a huge learning experience and winding up I was able to realize a fair amount of best-practices to follow while writing an application that can end up with a large code base. 
+
+Here, I want to share some of those realizations with you. 
+
+<ul><li>Making something work is a goal, but doing it right should be the way! I started feeling it deeply that as a developer it should be our ethic to write our code as maintainable, scable, and readable as possible. There are various paradigms to write a good code. Paradigms also depend upon what we are making, and what technologies we are using. Designing each function and method to do just one thing is an approach that was followed in this project.</li><li>Every single documents might have dedicated CSS file to declare unique styling and layout specific to that document but, there will always be number of places with exact same styling and layout in a project. It is a good approach to create a global CSS file to declare project oriented styling and layout. For ex, rather than writing "display:flex" throughout the project, we can create a class that handles only horizontal alignment.</li><li>Comments are beautiful! Writing good comments will help everybody to read and maintain the code.</li><li>Handling a lot of events in a single document can be tricky at times. We can write a block of code to distinguish the event something like this <code>if(event.key === "ArrowRight"){}</code> or <code>if(event.type === "click"){}</code> </li></ul>
+
+Well, there were many things but it has been a quite long time since I did this project and most of the things have already been hidden silent somewhere in my mind. Overall, the decision to make a game using Vanilla JavaScript and HTML/CSS was a great deal! 
+
+

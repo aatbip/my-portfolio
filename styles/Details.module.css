@@ -21,6 +21,10 @@
   .heading {
     font-size: calc(var(--font-size-heading) * 1.5);
   }
+
+  .wrapper {
+    font-size: calc(var(--font-size-text) - 5px);
+  }
 }
 
 .input_box {
@@ -73,3 +77,13 @@
 .description_container p {
   padding-top: 15px;
 }
+
+.description_container ul {
+  width: 90%; 
+  margin: 0 auto; 
+}
+
+.description_container li{
+  margin-top: 10px; 
+}
+

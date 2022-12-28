@@ -32,3 +32,9 @@ a {
   color: var(--font-color);
   text-decoration: underline;
 }
+
+code {
+  background-color: #3f3f3f;
+  padding: 2px; 
+  margin: 0px 6px; 
+}

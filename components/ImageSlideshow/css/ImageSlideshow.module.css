@@ -1,0 +1,32 @@
+.wrapper {
+  position: relative;
+  color: rgb(235, 16, 16);
+}
+
+.left {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.right {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 768px) {
+    .image {
+      width: 500px;
+      height: 300px;
+    }
+  }
+  
+
+@media only screen and (max-width: 450px) {
+  .image {
+    width: 300px;
+    height: 200px;
+  }
+}

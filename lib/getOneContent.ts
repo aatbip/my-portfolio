@@ -13,6 +13,7 @@ const getOneContent = async (type: string, filename: string) => {
     github_link: "",
     live_link: "",
     short_description: "",
+    images: "", 
     description: [],
   };
   const convertToJson = (myFile: string) => {
@@ -51,6 +52,11 @@ const getOneContent = async (type: string, filename: string) => {
 
       if (arr[i].split(":")[0] === "short_description") {
         obj["short_description"] = arr[i].split(":")[1];
+
+        arr = arr.filter((el) => el !== arr[i]);
+      }
+      if (arr[i].split(":")[0] === "images") {
+        obj["images"] = arr[i].split(":")[1];
 
         arr = arr.filter((el) => el !== arr[i]);
       }

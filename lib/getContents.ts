@@ -17,6 +17,7 @@ const getContents = async (type: string) => {
       github_link: "",
       live_link: "",
       short_description: "",
+      images: "", 
       description: [],
     };
     let desc: string[] = [];
@@ -58,6 +59,13 @@ const getContents = async (type: string) => {
 
         arr = arr.filter((el) => el !== arr[i]);
       }
+
+      if (arr[i].split(":")[0] === "images") {
+        obj["images"] = arr[i].split(":")[1];
+
+        arr = arr.filter((el) => el !== arr[i]);
+      }
+
       if (arr[i].split(":")[0] === "description") {
         for (let j = 0; j < arr.length; j++) {
           if (arr[j].split(":")[0] === "description") {

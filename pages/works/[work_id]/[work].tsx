@@ -1,12 +1,14 @@
+import { Markup } from "interweave";
 import Head from "next/head";
-import Link from "next/link";
 import React from "react";
 import { useSelector } from "react-redux";
+import ImageSlideshow from "../../../components/ImageSlideshow";
 import InputBox from "../../../components/InputBox/InputBox";
 import { IContent } from "../../../interfaces/interface";
 import getContents from "../../../lib/getContents";
 import getOneContent from "../../../lib/getOneContent";
 import {
+  closeModal,
   selectInput,
   unsetLinkText,
   unshowKeyboard,
@@ -20,19 +22,17 @@ interface IProp {
 
 const WorkDetail: React.FC<IProp> = ({ data }) => {
   const { linkText } = useSelector(selectInput);
-
   React.useEffect(() => {
     store.dispatch(unsetLinkText());
     store.dispatch(unshowKeyboard());
   }, []);
 
-  console.log(data);
   return (
     <>
       <Head>
         <title>{data.heading}</title>
       </Head>
-      <div className={styles.container}>
+      <div id="work-details" className={styles.container}>
         <div className={styles.input_box}>
           <InputBox
             links={["home", "about", "blogs", "works"]}
@@ -100,6 +100,35 @@ const WorkDetail: React.FC<IProp> = ({ data }) => {
                 })}
               </p>
             )}
+
+            {data.images && (
+              <p>
+                {"images".split("").map((el, ind) => {
+                  return (
+                    <span
+                      key={ind}
+                      className={`${
+                        linkText
+                          .toUpperCase()
+                          .replace(/\s+/g, "")
+                          .includes(el.toUpperCase())
+                          ? styles.selected_link
+                          : null
+                      } ${
+                        linkText
+                          .toUpperCase()
+                          .replace(/\s+/g, "")
+                          .includes("IMAGES")
+                          ? styles.selected_link_font
+                          : null
+                      }`}
+                    >
+                      {el}
+                    </span>
+                  );
+                })}
+              </p>
+            )}
           </div>
           <div className={styles.short_description_container}>
             <hr />
@@ -107,11 +136,16 @@ const WorkDetail: React.FC<IProp> = ({ data }) => {
           </div>
           <div className={styles.description_container}>
             {data.description.map((el, ind) => {
-              return <p key={ind}>{el}</p>;
+              return (
+                <p key={ind}>
+                  <Markup content={el} />
+                </p>
+              );
             })}
           </div>
         </div>
       </div>
+      <ImageSlideshow images={data.images.split(" ")} />
     </>
   );
 };
