@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 import ContentList from "../../components/ContentList/ContentList";
 import InputBox from "../../components/InputBox/InputBox";
@@ -21,18 +22,23 @@ const Work: React.FC<IProp> = ({ data }) => {
     store.dispatch(unshowKeyboard());
   }, []);
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.input_box}>
-        <InputBox
-          content={data}
-          links={["home", "about", "blogs"]}
-          from="works"
-        />
+    <>
+      <Head>
+        <title>My Works | anantabipal.dev</title>
+      </Head>
+      <div className={styles.wrapper}>
+        <div className={styles.input_box}>
+          <InputBox
+            content={data}
+            links={["home", "about", "blogs"]}
+            from="works"
+          />
+        </div>
+        {data.map((el, ind) => {
+          return <ContentList key={ind} data={el} />;
+        })}
       </div>
-      {data.map((el, ind) => {
-        return <ContentList key={ind} data={el} />;
-      })}
-    </div>
+    </>
   );
 };
 

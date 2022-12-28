@@ -2,7 +2,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
 import { useSelector } from "react-redux";
 import { IContent } from "../../interfaces/interface";
-
 import {
   handleSubmit,
   selectInput,
@@ -42,6 +41,7 @@ const InputBox: React.FC<IInputBox> = ({ links, content, from, url }) => {
   };
 
   React.useEffect(() => {
+    
     store.dispatch(setFromAndContent({ from, content }));
     if (url) {
       store.dispatch(setURL(url));
@@ -94,7 +94,7 @@ const InputBox: React.FC<IInputBox> = ({ links, content, from, url }) => {
             Type title or links to navigate
           </p>
         )}
-         {isFocused && (from === "details-page") && (
+        {isFocused && from === "details-page" && (
           <p className={styles.links} style={{ fontSize: "10px" }}>
             Type links to navigate
           </p>

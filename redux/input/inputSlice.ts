@@ -45,7 +45,6 @@ const inputSlice = createSlice({
         github_link: action.payload.github_link,
         live_link: action.payload.live_link,
       };
-      console.log(state.url);
     },
     unsetLinkText: (state) => {
       state.linkText = "";

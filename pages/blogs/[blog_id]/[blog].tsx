@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 import { useSelector } from "react-redux";
 import InputBox from "../../../components/InputBox/InputBox";
@@ -25,34 +26,39 @@ const BlogDetail: React.FC<IProp> = ({ data }) => {
   }, []);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.input_box}>
-        <InputBox
-          links={["home", "about", "blogs", "works"]}
-          from="details-page"
-        />
-      </div>
-      <div className={styles.wrapper}>
-        <p className={styles.heading}>{data.heading}</p>
-        <p
-          style={{
-            marginLeft: "20px",
-          }}
-        >
-          {data.date}
-        </p>
+    <>
+      <Head>
+        <title>{data.heading}</title>
+      </Head>
+      <div className={styles.container}>
+        <div className={styles.input_box}>
+          <InputBox
+            links={["home", "about", "blogs", "works"]}
+            from="details-page"
+          />
+        </div>
+        <div className={styles.wrapper}>
+          <p className={styles.heading}>{data.heading}</p>
+          <p
+            style={{
+              marginLeft: "20px",
+            }}
+          >
+            {data.date}
+          </p>
 
-        <div className={styles.short_description_container}>
-          <hr />
-          <p>{data.short_description}</p>
-        </div>
-        <div className={styles.description_container}>
-          {data.description.map((el, ind) => {
-            return <p key={ind}>{el}</p>;
-          })}
+          <div className={styles.short_description_container}>
+            <hr />
+            <p>{data.short_description}</p>
+          </div>
+          <div className={styles.description_container}>
+            {data.description.map((el, ind) => {
+              return <p key={ind}>{el}</p>;
+            })}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

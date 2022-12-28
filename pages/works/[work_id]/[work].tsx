@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 import { useSelector } from "react-redux";
@@ -27,49 +28,26 @@ const WorkDetail: React.FC<IProp> = ({ data }) => {
 
   console.log(data);
   return (
-    <div className={styles.container}>
-      <div className={styles.input_box}>
-        <InputBox
-          links={["home", "about", "blogs", "works"]}
-          from="details-page"
-          url={{
-            github_link: data.github_link,
-            live_link: data.live_link,
-          }}
-        />
-      </div>
-      <div className={styles.wrapper}>
-        <p className={styles.heading}>{data.heading}</p>
-        <div className={styles.link_container}>
-          <p>
-            {"github repo".split("").map((el, ind) => {
-              return (
-                <span
-                  key={ind}
-                  className={`${
-                    linkText
-                      .toUpperCase()
-                      .replace(/\s+/g, "")
-                      .includes(el.toUpperCase())
-                      ? styles.selected_link
-                      : null
-                  } ${
-                    linkText
-                      .toUpperCase()
-                      .replace(/\s+/g, "")
-                      .includes("GITHUBREPO")
-                      ? styles.selected_link_font
-                      : null
-                  }`}
-                >
-                  {el}
-                </span>
-              );
-            })}
-          </p>
-          {data.live_link && (
+    <>
+      <Head>
+        <title>{data.heading}</title>
+      </Head>
+      <div className={styles.container}>
+        <div className={styles.input_box}>
+          <InputBox
+            links={["home", "about", "blogs", "works"]}
+            from="details-page"
+            url={{
+              github_link: data.github_link,
+              live_link: data.live_link,
+            }}
+          />
+        </div>
+        <div className={styles.wrapper}>
+          <p className={styles.heading}>{data.heading}</p>
+          <div className={styles.link_container}>
             <p>
-              {"live link".split("").map((el, ind) => {
+              {"github repo".split("").map((el, ind) => {
                 return (
                   <span
                     key={ind}
@@ -84,7 +62,7 @@ const WorkDetail: React.FC<IProp> = ({ data }) => {
                       linkText
                         .toUpperCase()
                         .replace(/\s+/g, "")
-                        .includes("LIVELINK")
+                        .includes("GITHUBREPO")
                         ? styles.selected_link_font
                         : null
                     }`}
@@ -94,19 +72,47 @@ const WorkDetail: React.FC<IProp> = ({ data }) => {
                 );
               })}
             </p>
-          )}
-        </div>
-        <div className={styles.short_description_container}>
-          <hr />
-          <p>{data.short_description}</p>
-        </div>
-        <div className={styles.description_container}>
-          {data.description.map((el, ind) => {
-            return <p key={ind}>{el}</p>;
-          })}
+            {data.live_link && (
+              <p>
+                {"live link".split("").map((el, ind) => {
+                  return (
+                    <span
+                      key={ind}
+                      className={`${
+                        linkText
+                          .toUpperCase()
+                          .replace(/\s+/g, "")
+                          .includes(el.toUpperCase())
+                          ? styles.selected_link
+                          : null
+                      } ${
+                        linkText
+                          .toUpperCase()
+                          .replace(/\s+/g, "")
+                          .includes("LIVELINK")
+                          ? styles.selected_link_font
+                          : null
+                      }`}
+                    >
+                      {el}
+                    </span>
+                  );
+                })}
+              </p>
+            )}
+          </div>
+          <div className={styles.short_description_container}>
+            <hr />
+            <p>{data.short_description}</p>
+          </div>
+          <div className={styles.description_container}>
+            {data.description.map((el, ind) => {
+              return <p key={ind}>{el}</p>;
+            })}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
