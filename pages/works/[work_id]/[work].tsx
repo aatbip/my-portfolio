@@ -145,7 +145,7 @@ const WorkDetail: React.FC<IProp> = ({ data }) => {
           </div>
         </div>
       </div>
-      <ImageSlideshow images={data.images.split(" ")} />
+      {data.images && <ImageSlideshow images={data.images.split(" ")} />}
     </>
   );
 };
