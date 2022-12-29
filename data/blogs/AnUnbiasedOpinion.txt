@@ -1,0 +1,12 @@
+id:02
+date:
+heading:An Unbiased Opinion
+short_description:Now that you are already reading the first line of this post, let me assure you that by sticking for a few more lines you will be reading what you wanted to hear. The picture below is a screenshot taken from my phone that shows...
+images:blog-2.jpg
+description:Now that you are already reading the first line of this post, let me assure you that by sticking for a few more lines you will be reading what you wanted to hear.
+
+The picture below is a screenshot taken from my phone that shows the <a href="https://www.freeCodeCamp.org" target="_blank">freeCodeCamp.org</a> recent youtube voting. You can scroll down and have a look and you will find that out of 14k+ votes, 81% of people are self-taught! This is the real data and as you can see there, a university degree, for which we pay so much and end up thousands of dollars in debt, has been effective for only 12% of people.
+
+Today, if we take up some time to google then we will find hundreds of resources that are "totally free". In fact, a cleaver self-learner end up building all the essential skills without paying a single penny. I think that self-learning itself is an art, which unfortunately our schooling and education system fails to teach us. This is why most of us find it so difficult to practice self-learning and most of the time we give up in dilemma and frustration.
+
+University/Schools are the kind of businesses that make huge profits without having to worry about customer satisfaction. I strongly believe this will change in the coming 10/15 years and the way schools operate will be vastly different!

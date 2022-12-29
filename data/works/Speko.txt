@@ -1,4 +1,4 @@
-id:04
+id:02
 heading:Speko
 github_link:
 frontend_link:github.com/aatbip/speko-frontend
@@ -6,7 +6,8 @@ backend_link:github.com/aatbip/speko-backend
 live_link:
 short_description:(under development) Speko is a discussion forum application being created for fun and learning purpose. This is an open source project where a few people are working together. I am maintaining the repositories, performing PR review, and providing mentorship to those who approach.    
 images:speko-1.png speko-2.png speko-3.png
-description:Main objective behind starting Speko is to learn! You can have a look at the Figma designs of the application in the <i>Images</i>. 
+description:Main objective behind starting Speko is to learn! You can have a look at the Figma designs of the application by typing Images.
+<p>Special thanks to <a href="https://www.adcdev.tech" target="_blank"> Adriana Luisa DC </a> for giving us her time and efforts by designing the app.</p>
 <p><b>Technologies Being Used</b></p><ul><li>TypeScript</li><li>React</li><li>Redux</li><li>React Router</li><li>Node.js</li><li>Express</li><li>Mongoose</li><li>MongoDB</li></ul>
 <p><b>Agenda for v1</b></p>
 <ul><p><b>Users should be able to</b></p><li>start a new discussion thread either anonymously or signed.</li><li>create topics or assign the thread to an existing topic.</li><li>see the trending posts and trending topics.</li><li>report or mark the thread as "matured content". If certain thresshold is crossed, matured contents should be displayed with blurred effect initially.</li><li>see the history of their engagement.</li><li>participate in the discussion thread by either commenting or putting emojis.</li><li>search by topics or keyword, and visit a page by topic to see the related threads.</li></ul>

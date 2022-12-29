@@ -10,7 +10,7 @@
 .wrapper {
   width: 80%;
   margin: 0 auto;
-  padding: 2em 0em;
+  padding: 1.5em 0em;
   margin-top: 4em;
 }
 
@@ -45,6 +45,14 @@
   .content_container {
     flex-wrap: wrap;
   }
+
+  .wrapper {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0em 0em 2em 0em;
+    margin-top: 4em;
+  }
+  
 }
 
 .content {

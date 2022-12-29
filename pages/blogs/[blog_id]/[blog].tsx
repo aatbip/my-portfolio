@@ -1,5 +1,6 @@
 import { Markup } from "interweave";
 import Head from "next/head";
+import Image from "next/image";
 import React from "react";
 import { useSelector } from "react-redux";
 import InputBox from "../../../components/InputBox/InputBox";
@@ -60,6 +61,33 @@ const BlogDetail: React.FC<IProp> = ({ data }) => {
                 </p>
               );
             })}
+          </div>
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-around",
+              // margin: "0 auto",
+            }}
+          >
+            {data.images &&
+              data.images.split(" ").map((img, el) => {
+                return (
+                  <Image
+                    key={el}
+                    src={`/images/blogs/${img}`}
+                    alt="my blog image"
+                    width={260}
+                    height={500}
+                    style={{
+                      margin: "0 auto",
+
+                      objectFit: "contain",
+                    }}
+                  />
+                );
+              })}
           </div>
         </div>
       </div>

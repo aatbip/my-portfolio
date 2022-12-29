@@ -1,0 +1,15 @@
+id:01
+date:20/12/2022
+heading:A Way To Learn
+short_description:A relatively new way to learn JavaScript.
+description:People say this - don't learn React without learning JS!
+
+I DON'T AGREE.
+
+I think today, starting with React is the best way to learning JavaScript and its crucial concepts.
+
+Best way to learn a new language is to learn it practically. Don't go to Leetcode and solve those algorithmic easy problems if you're learning a new language. For a beginner, there's no where you can apply JS as much as you can in React.
+
+I personally experienced lots of hard to grab JS concepts becoming clearer while learning React. It was only because I was able to apply those concepts to build stuffs in React.
+
+To conclude, best way to learn JS in my opinion - Start building projects in React. You will encounter lots of JS in the process, learn what you encounter side by side, make it practical and fun!

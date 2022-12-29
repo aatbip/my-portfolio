@@ -1,0 +1,11 @@
+id:06
+heading:NAT
+github_link:
+live_link:
+short_description:NAT is a travel and tours application that allows to users to see, order, and customize travel packages bookings. It is designed and developed by me and my team for a client in Nepal.
+images:NAT-1.png NAT-2.png NAT-3.png
+description:NAT team has taken design seriously! The design team has performed extensive amount of UX research and so the dev team has given their 100% in making a product with an improved user experience. 
+<p><b>NAT is divided into 4 codebases — </b></p>
+<ul> <li>NAT Client - has all the functionalities for end user experience</li><li>NAT Admin - Admin dashboard built using AdminJS</li><li>NAT Homeowner's App - for the owners of the homestays to manage contents, bookings, and payments</li><li>NAT Backend - contains all server-side APIs</li></ul>
+NAT is built with React, Node.js, Express, MongoDB, and AdminJS.
+<p><i>Repository links are not given because they're privately owned.</i></p>

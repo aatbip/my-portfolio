@@ -30,10 +30,6 @@ const WorkDetail: React.FC<IProp> = ({ data }) => {
     <>
       <Head>
         <title>{data.heading}</title>
-        <meta name="description" property="og:description" content={`${data.short_description}`} />
-        <meta name="url" property="og:url" content={`anantabipal.dev`} />
-        <meta name="title" property="og:title" content={`${data.heading}`} />
-        <meta name="image" property="og:title" content={`anantabipal.dev/images/me.jpg`} />
       </Head>
       <div id="work-details" className={styles.container}>
         <div className={styles.input_box}>
@@ -43,7 +39,7 @@ const WorkDetail: React.FC<IProp> = ({ data }) => {
             url={{
               github_link: data.github_link,
               frontend_link: data.frontend_link,
-              backend_link: data.backend_link,
+              backend_link: data.backend_link, 
               live_link: data.live_link,
             }}
           />

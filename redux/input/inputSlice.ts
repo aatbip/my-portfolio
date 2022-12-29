@@ -125,7 +125,7 @@ const inputSlice = createSlice({
             .replace(/\s+/g, "")
             .includes(_link.toUpperCase().replace(/\s+/g, ""))
         );
-        if (link.length == 0) return;
+        if (link.length == 0 || link.length > 1) return;
         if (state.from === "works")
           Router.push(
             `/works/${link[0]?.id}/${link[0]?.heading.replace(/\s+/g, "")}`

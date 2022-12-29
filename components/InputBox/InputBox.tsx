@@ -88,17 +88,17 @@ const InputBox: React.FC<IInputBox> = ({ links, content, from, url }) => {
           }}
         />
         {isFocused && from === "home" && (
-          <p style={{ fontSize: "10px" }}>
+          <p style={{ fontSize: "12px" }}>
             Type link and hit enter to navigate
           </p>
         )}
         {isFocused && (from === "works" || from === "blogs") && (
-          <p className={styles.links} style={{ fontSize: "10px" }}>
+          <p className={styles.links} style={{ fontSize: "12px" }}>
             Type title or links to navigate
           </p>
         )}
         {isFocused && from === "details-page" && (
-          <p className={styles.links} style={{ fontSize: "10px" }}>
+          <p className={styles.links} style={{ fontSize: "12px" }}>
             Type links to navigate
           </p>
         )}

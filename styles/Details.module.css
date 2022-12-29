@@ -14,17 +14,7 @@
 }
 .heading {
   font-family: var(--font-type-heading);
-  font-size: calc(var(--font-size-heading) * 2);
-}
-
-@media only screen and (max-width: 450px) {
-  .heading {
-    font-size: calc(var(--font-size-heading) * 1.5);
-  }
-
-  .wrapper {
-    font-size: calc(var(--font-size-text) - 8px);
-  }
+  font-size: calc(var(--font-size-heading) * 1.8);
 }
 
 .input_box {
@@ -79,11 +69,22 @@
 }
 
 .description_container ul {
-  width: 90%; 
-  margin: 0 auto; 
+  width: 90%;
+  margin: 0 auto;
 }
 
-.description_container li{
-  margin-top: 10px; 
+.description_container li {
+  margin-top: 10px;
 }
 
+@media only screen and (max-width: 450px) {
+  .heading {
+    font-size: calc(var(--font-size-heading) - 8px);
+  }
+
+  .link_container {
+    font-size: calc(var(--font-size-text) - 8px);
+    justify-content: space-around;
+    gap: 2em;
+  }
+}
