@@ -5,7 +5,7 @@ frontend_link:github.com/aatbip/nyingbe-frontend
 backend_link:github.com/aatbip/nyingbe-api
 live_link:
 short_description:Nyingbe is an app to manage and share contents. 
-images:meme-generator-1.jpg
+images:nyingbe-1.png nyingbe-2.png nyingbe-3.png
 description:Nyingbe's frontend is written in JavaScript using React. State management is handled using Context and useReducer hook. 
 Backend of Nyingbe is written in Node.js and REST APIs are built using Express. It also has jwt based authentication logic.
 I built Nyingby in order to implement my learnings of Context and useReducer hook. They provide many benefits as compared to state management with useState() and props drilling. 

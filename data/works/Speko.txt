@@ -5,7 +5,7 @@ frontend_link:github.com/aatbip/speko-frontend
 backend_link:github.com/aatbip/speko-backend
 live_link:
 short_description:(under development) Speko is a discussion forum application being created for fun and learning purpose. This is an open source project where a few people are working together. I am maintaining the repositories, performing PR review, and providing mentorship to those who approach.    
-images:meme-generator-1.jpg
+images:speko-1.png speko-2.png speko-3.png
 description:Main objective behind starting Speko is to learn! You can have a look at the Figma designs of the application in the <i>Images</i>. 
 <p><b>Technologies Being Used</b></p><ul><li>TypeScript</li><li>React</li><li>Redux</li><li>React Router</li><li>Node.js</li><li>Express</li><li>Mongoose</li><li>MongoDB</li></ul>
 <p><b>Agenda for v1</b></p>

@@ -5,7 +5,7 @@ frontend_link:
 backend_link:
 live_link:anantabipal.dev
 short_description:Making this portfolio website was a leisure. It was a continuous process of thinking what I really want, and taking virtuous technical decisions to not face an arduous development experience. Let's talk about some of them!   
-images:meme-generator-1.jpg
+images:
 description:I wanted to keep my site as simple as possible while doing few things in a new way. I didn't want to maintain any database or CMS for managing my contents. I wanted to make the process of building and deployment of my site completely invisible to me — as soon as I push a commit to the repository, I wanted changes to be live. I also wanted to have a better experience while adding new contents — just write the content in a plain .txt file and the code taking care of the rest. 
 <p><b>NextJS</b><p>
 I love React but it is a bit painful to start a new project from scratch with it. React doesn't offer out-of-the-box solution for routing, SSR, and data fetching. NextJS made it easier to generating static assets, handling routes, and fetching data from within the project's root directory. 
