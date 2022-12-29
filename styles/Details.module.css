@@ -23,7 +23,7 @@
   }
 
   .wrapper {
-    font-size: calc(var(--font-size-text) - 5px);
+    font-size: calc(var(--font-size-text) - 8px);
   }
 }
 

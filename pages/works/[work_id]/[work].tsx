@@ -30,6 +30,8 @@ const WorkDetail: React.FC<IProp> = ({ data }) => {
     <>
       <Head>
         <title>{data.heading}</title>
+        <meta name="description" content={`${data.heading}`} />
+        <meta name="og:title" property="og:title" content={`${data.heading}`} />
       </Head>
       <div id="work-details" className={styles.container}>
         <div className={styles.input_box}>
@@ -39,7 +41,7 @@ const WorkDetail: React.FC<IProp> = ({ data }) => {
             url={{
               github_link: data.github_link,
               frontend_link: data.frontend_link,
-              backend_link: data.backend_link, 
+              backend_link: data.backend_link,
               live_link: data.live_link,
             }}
           />
