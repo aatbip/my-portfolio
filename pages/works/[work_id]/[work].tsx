@@ -30,8 +30,9 @@ const WorkDetail: React.FC<IProp> = ({ data }) => {
     <>
       <Head>
         <title>{data.heading}</title>
-        <meta name="description" content={`${data.heading}`} />
-        <meta name="og:title" property="og:title" content={`${data.heading}`} />
+        <meta name="description" property="og:description" content={`${data.heading}`} />
+        <meta name="title" property="og:title" content={`${data.heading}`} />
+        <meta name="image" property="og:title" content={`/images/me.jpg`} />
       </Head>
       <div id="work-details" className={styles.container}>
         <div className={styles.input_box}>
