@@ -1,10 +1,12 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 import Router from "next/router";
 import { IContent } from "../../interfaces/interface";
 import { RootState } from "../store";
 
 type url = {
   github_link: string;
+  frontend_link: string;
+  backend_link: string;
   live_link: string;
 };
 
@@ -27,6 +29,8 @@ const initialState: IInitialState = {
   content: [],
   url: {
     github_link: "",
+    frontend_link: "",
+    backend_link: "",
     live_link: "",
   },
 };
@@ -42,9 +46,15 @@ const inputSlice = createSlice({
       state.content = action.payload.content;
       state.from = action.payload.from;
     },
+    unsetFromAndContent: (state) => {
+      state.content = [];
+      state.from = "";
+    },
     setURL: (state, action) => {
       state.url = {
         github_link: action.payload.github_link,
+        frontend_link: action.payload.frontend_link,
+        backend_link: action.payload.backend_link,
         live_link: action.payload.live_link,
       };
     },
@@ -127,29 +137,28 @@ const inputSlice = createSlice({
       }
 
       if (state.url) {
-        if (_link === "images") state.showModal = true;
+        if (_link.toLowerCase() === "images") state.showModal = true;
 
-        if (
-          _link.toUpperCase().includes("GITHUBREPO") ||
-          _link.toUpperCase().includes("GITHUB REPO")
-        )
+        if (_link.toUpperCase().replace(/\s/g, "").includes("GITHUBREPO"))
           window.open(`https://${state.url.github_link}`, "blank");
 
-        if (
-          _link.toUpperCase().includes("LIVE LINK") ||
-          _link.toUpperCase().includes("LIVELINK")
-        )
+        if (_link.toUpperCase().replace(/\s/g, "").includes("LIVELINK"))
           window.open(`https://${state.url.live_link}`, "blank");
+        if (_link.toUpperCase().replace(/\s/g, "").includes("FRONTENDREPO"))
+          window.open(`https://${state.url.frontend_link}`, "blank");
+
+        if (_link.toUpperCase().replace(/\s/g, "").includes("BACKENDREPO"))
+          window.open(`https://${state.url.backend_link}`, "blank");
       }
 
       if (state.from === "about-page") {
-        if (_link === "github")
+        if (_link.toLowerCase() === "github")
           window.open("https://www.github.com/aatbip", "blank");
 
-        if (_link === "linkedin")
+        if (_link.toLowerCase() === "linkedin")
           window.open("https://www.linkedin.com/in/anantabipal");
 
-        if (_link === "resume") window.open("/file/resume.pdf", "download");
+        if (_link.toLowerCase() === "resume") window.open("/file/resume.pdf", "download");
       }
     },
   },
@@ -160,10 +169,11 @@ export const selectInput = (state: RootState) => state.input;
 export const {
   setLinkText,
   setFromAndContent,
+  unsetFromAndContent,
   setURL,
   unsetLinkText,
   handleShowKeyboard,
-  closeModal, 
+  closeModal,
   unshowKeyboard,
   keyboardUpdateLinkText,
   setIsFocused,

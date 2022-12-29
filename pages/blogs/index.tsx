@@ -6,6 +6,7 @@ import { IContent } from "../../interfaces/interface";
 import getContents from "../../lib/getContents";
 import {
   handleShowKeyboard,
+  unsetFromAndContent,
   unsetLinkText,
   unshowKeyboard,
 } from "../../redux/input/inputSlice";

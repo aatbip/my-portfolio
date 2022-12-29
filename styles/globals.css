@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500&display=swap");
 
-@font-face {
+/* @font-face {
   font-family: garalama;
   src: url("../public/fonts/GARALAMA.ttf");
   src: url("../public/fonts/GARALAMA.eot");
   src: url("../public//fonts/GARALAMA.woff");
   src: url("../public/fonts/GARALAMA.woff2");
-}
+} */
 
 * {
   margin: 0;
@@ -17,7 +17,7 @@
 :root {
   --font-size-heading: 35px;
   --font-size-text: 18px;
-  --font-type-text: "Plus Jakarta Sans", sans-serif;
+  /* --font-type-text: "Plus Jakarta Sans", sans-serif; */
   /* --font-type-heading: garalama; */
   --font-color: #e1dbdb;
   --bg-color: #000000;

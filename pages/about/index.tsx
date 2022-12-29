@@ -29,6 +29,7 @@ const About = () => {
                 alt="myself"
                 width="180"
                 height="180"
+                quality={10}
                 className={styles.image}
               />
             </div>

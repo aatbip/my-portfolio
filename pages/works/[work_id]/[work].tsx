@@ -26,7 +26,6 @@ const WorkDetail: React.FC<IProp> = ({ data }) => {
     store.dispatch(unsetLinkText());
     store.dispatch(unshowKeyboard());
   }, []);
-
   return (
     <>
       <Head>
@@ -39,6 +38,8 @@ const WorkDetail: React.FC<IProp> = ({ data }) => {
             from="details-page"
             url={{
               github_link: data.github_link,
+              frontend_link: data.frontend_link,
+              backend_link: data.backend_link, 
               live_link: data.live_link,
             }}
           />
@@ -46,32 +47,92 @@ const WorkDetail: React.FC<IProp> = ({ data }) => {
         <div className={styles.wrapper}>
           <p className={styles.heading}>{data.heading}</p>
           <div className={styles.link_container}>
-            <p>
-              {"github repo".split("").map((el, ind) => {
-                return (
-                  <span
-                    key={ind}
-                    className={`${
-                      linkText
-                        .toUpperCase()
-                        .replace(/\s+/g, "")
-                        .includes(el.toUpperCase())
-                        ? styles.selected_link
-                        : null
-                    } ${
-                      linkText
-                        .toUpperCase()
-                        .replace(/\s+/g, "")
-                        .includes("GITHUBREPO")
-                        ? styles.selected_link_font
-                        : null
-                    }`}
-                  >
-                    {el}
-                  </span>
-                );
-              })}
-            </p>
+            {data.github_link && (
+              <p>
+                {"github repo".split("").map((el, ind) => {
+                  return (
+                    <span
+                      key={ind}
+                      className={`${
+                        linkText
+                          .toUpperCase()
+                          .replace(/\s+/g, "")
+                          .includes(el.toUpperCase())
+                          ? styles.selected_link
+                          : null
+                      } ${
+                        linkText
+                          .toUpperCase()
+                          .replace(/\s+/g, "")
+                          .includes("GITHUBREPO")
+                          ? styles.selected_link_font
+                          : null
+                      }`}
+                    >
+                      {el}
+                    </span>
+                  );
+                })}
+              </p>
+            )}
+
+            {data.frontend_link && (
+              <p>
+                {"frontend repo".split("").map((el, ind) => {
+                  return (
+                    <span
+                      key={ind}
+                      className={`${
+                        linkText
+                          .toUpperCase()
+                          .replace(/\s+/g, "")
+                          .includes(el.toUpperCase())
+                          ? styles.selected_link
+                          : null
+                      } ${
+                        linkText
+                          .toUpperCase()
+                          .replace(/\s+/g, "")
+                          .includes("FRONTENDREPO")
+                          ? styles.selected_link_font
+                          : null
+                      }`}
+                    >
+                      {el}
+                    </span>
+                  );
+                })}
+              </p>
+            )}
+
+            {data.backend_link && (
+              <p>
+                {"backend repo".split("").map((el, ind) => {
+                  return (
+                    <span
+                      key={ind}
+                      className={`${
+                        linkText
+                          .toUpperCase()
+                          .replace(/\s+/g, "")
+                          .includes(el.toUpperCase())
+                          ? styles.selected_link
+                          : null
+                      } ${
+                        linkText
+                          .toUpperCase()
+                          .replace(/\s+/g, "")
+                          .includes("BACKENDREPO")
+                          ? styles.selected_link_font
+                          : null
+                      }`}
+                    >
+                      {el}
+                    </span>
+                  );
+                })}
+              </p>
+            )}
             {data.live_link && (
               <p>
                 {"live link".split("").map((el, ind) => {
@@ -135,7 +196,7 @@ const WorkDetail: React.FC<IProp> = ({ data }) => {
             <p>{data.short_description}</p>
           </div>
           <div className={styles.description_container}>
-            {data.description.map((el, ind) => {
+            {data?.description.map((el, ind) => {
               return (
                 <p key={ind}>
                   <Markup content={el} />
@@ -157,7 +218,7 @@ export async function getStaticPaths() {
   const paths = arrayOfFiles.map((el: IContent) => {
     return {
       params: {
-        work_id: el.id,
+        work_id: `${el.id}`,
         work: el.heading.replace(/\s+/g, ""),
       },
     };

@@ -1,8 +1,7 @@
-id:04
-heading:Maya
-github_link:something.something.com
-live_link:hello.com
-short_description:A quiz app that uses quiz API and lets you select topics. 
+id:01
+date:02/05/2022
+heading:Practice 
+short_description:I tried next js app last week! Let's see how it is working?
 description:Hey! I just want to share you about my new project. This is a next js app that i made for authentication and authorization. In this app, I want to practice how does it really work! 
 So, First thing first, I want to make my life cool! and do something with my life. hahaha... jokes apart!
 Thats the end.

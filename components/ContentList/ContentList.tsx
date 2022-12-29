@@ -1,7 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { IContent } from "../../interfaces/interface";
-import { selectInput, unsetLinkText } from "../../redux/input/inputSlice";
+import {
+  selectInput,
+  unsetFromAndContent,
+  unsetLinkText,
+} from "../../redux/input/inputSlice";
 import store from "../../redux/store";
 import styles from "./css/ContentList.module.css";
 interface IProp {
@@ -9,18 +13,34 @@ interface IProp {
   from?: string;
 }
 const ContentList: React.FC<IProp> = ({ data, from }) => {
-  const { linkText } = useSelector(selectInput);
+  const { linkText, content } = useSelector(selectInput);
+  const [link, setLink] = React.useState("");
   React.useEffect(() => {
     store.dispatch(unsetLinkText());
   }, []);
+
+  React.useEffect(() => {
+    setLink("");
+
+    let _link = linkText.replace("@", "");
+
+    let link = content?.filter((el: any) =>
+      el.heading
+        .toUpperCase()
+        .replace(/\s+/g, "")
+        .includes(_link.toUpperCase().replace(/\s+/g, ""))
+    );
+    if (link?.length == 1) setLink(link[0]?.heading);
+  }, [linkText]);
+
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.content_list}>
         <div
           className={`${
-            linkText
-              .toUpperCase()
+            link
+              ?.toUpperCase()
               .replace(/\s+/g, "")
               .includes(data.heading.toUpperCase().replace(/\s+/g, ""))
               ? styles.selected_square
@@ -28,7 +48,19 @@ const ContentList: React.FC<IProp> = ({ data, from }) => {
           }`}
         ></div>
         <aside className={styles.aside}>
-          <p id={data.heading} className={`${styles.heading} `}>
+          <p
+            id={data.heading}
+            className={`${styles.heading}`}
+            style={
+              link?.toUpperCase() === data.heading.toUpperCase()
+                ? {
+                    color: "#ffff00",
+                    fontSize: "40px",
+                    transition: "font-size 0.5s",
+                  }
+                : undefined
+            }
+          >
             {data.heading.split("").map((el, index) => {
               return (
                 <span
@@ -40,14 +72,7 @@ const ContentList: React.FC<IProp> = ({ data, from }) => {
                       .includes(el.toUpperCase())
                       ? styles.selected_link
                       : null
-                  } ${
-                    linkText
-                      .toUpperCase()
-                      .replace(/\s+/g, "")
-                      .includes(data.heading.toUpperCase().replace(/\s+/g, ""))
-                      ? styles.selected_link_font
-                      : null
-                  }`}
+                  } `}
                 >
                   {el}
                 </span>
@@ -57,7 +82,7 @@ const ContentList: React.FC<IProp> = ({ data, from }) => {
           {from === "blogs" && (
             <p
               className={`${
-                linkText
+                link
                   .toUpperCase()
                   .replace(/\s+/g, "")
                   .includes(data.heading.toUpperCase().replace(/\s+/g, ""))
@@ -74,8 +99,8 @@ const ContentList: React.FC<IProp> = ({ data, from }) => {
       <section className={styles.short_description_section}>
         <p
           className={`${
-            linkText
-              .toUpperCase()
+            link
+              ?.toUpperCase()
               .replace(/\s+/g, "")
               .includes(data.heading.toUpperCase().replace(/\s+/g, ""))
               ? styles.selected_short_description

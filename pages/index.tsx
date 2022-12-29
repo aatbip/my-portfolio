@@ -6,6 +6,7 @@ import { unsetLinkText, unshowKeyboard } from "../redux/input/inputSlice";
 import { isMobile } from "react-device-detect";
 import Head from "next/head";
 
+
 const Home: React.FC = () => {
   React.useEffect(() => {
     store.dispatch(unsetLinkText());

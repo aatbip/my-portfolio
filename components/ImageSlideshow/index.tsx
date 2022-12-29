@@ -45,7 +45,6 @@ const ImageSlideshow: React.FC<IProp> = ({ images }) => {
 
   const toRight = () => {
     if (count == slideShow.length - 1) {
-      console.log("hello");
       setCount(0);
       return;
     }

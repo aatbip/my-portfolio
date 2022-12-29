@@ -20,6 +20,8 @@ interface IInputBox {
   from: string;
   url?: {
     github_link?: string;
+    frontend_link?:string;
+    backend_link?:string; 
     live_link?: string;
   };
 }
@@ -39,6 +41,7 @@ const InputBox: React.FC<IInputBox> = ({ links, content, from, url }) => {
       store.dispatch(unsetLinkText());
     }
   };
+
 
   React.useEffect(() => {
     

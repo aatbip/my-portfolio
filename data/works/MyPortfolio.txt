@@ -1,0 +1,22 @@
+id:08
+heading:My Portfolio
+github_link:github.com/aatbip/my-portfolio
+frontend_link:
+backend_link:
+live_link:anantabipal.dev
+short_description:Making this portfolio website was a leisure. It was a continuous process of thinking what I really want, and taking virtuous technical decisions to not face an arduous development experience. Let's talk about some of them!   
+images:meme-generator-1.jpg
+description:I wanted to keep my site as simple as possible while doing few things in a new way. I didn't want to maintain any database or CMS for managing my contents. I wanted to make the process of building and deployment of my site completely invisible to me — as soon as I push a commit to the repository, I wanted changes to be live. I also wanted to have a better experience while adding new contents — just write the content in a plain .txt file and the code taking care of the rest. 
+<p><b>NextJS</b><p>
+I love React but it is a bit painful to start a new project from scratch with it. React doesn't offer out-of-the-box solution for routing, SSR, and data fetching. NextJS made it easier to generating static assets, handling routes, and fetching data from within the project's root directory. 
+<p><b>Content Management</b></p>
+I didn't want to manage a database or CMS. My goal was to put all my contents in the project's directory itself written in .txt file. I wanted to have the experience of writing new contents as if I am writing on google doc. Writing the contents in yaml or md was an option, but like I said, I wanted a feeling of plain text. Hence, there were challenges in achiving all these and NextJS came handy even in this part.  
+
+As I was avoiding database, I had to store all the contents in the project directory. Node.js internal modules can't run in the browser and it would have been difficult to use modules like <code>path</code> and <code>fs</code> to interact with the file system. I wrote a few lines of code that can receive the file and do some logic to convert it into json. Then, using <code>getServerSideProps()</code> which runs only in the server made it possible to access the file system's contents converted into json just ready to be used in my component. 
+<p><b>The Keyboard</b></p> 
+I wanted to avoid interaction through mouse in my site but I was worried if this decision would make user experience in mobile devices a major flaw. Because in mobile devices, focusing on input box makes the mobile's native keyboard to pop out, it would hide half of the display. The solution was to create a custom Keyboard component that will only be shown in the mobile devices. By using <code>inputMode="none"</code> and <code>autoFocus={false}</code> in the input element I can stop the native mobile's keyboard from poping out. Then, react-device-detect library helped me to detect mobile devices to show the Keyboard component only in the mobile devices. 
+<p><b>Building and Deployment</b></p>
+As said before, I wanted to make building and deployment part of my site completely invisible to me. I used Netlify to handle that for me. Netlify can automate the building also auto installing the required plugins for building a NextJS app. It can easily integrate with GitHub and all new commits will automatically get deployed without me having to worry. 
+<p><b>Final Words</b></p>
+There are few architectural scopes that can be made better, but as of now I am quite satisfied with this.
+  

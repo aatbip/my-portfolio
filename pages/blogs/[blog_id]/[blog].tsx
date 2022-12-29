@@ -74,7 +74,7 @@ export async function getStaticPaths() {
   const paths = data.map((el: IContent) => {
     return {
       params: {
-        blog_id: el.id,
+        blog_id: `${el.id}`,
         blog: el.heading.replace(/\s+/g, ""),
       },
     };

@@ -15,9 +15,11 @@ const getContents = async (type: string) => {
       date: "",
       heading: "",
       github_link: "",
+      frontend_link: "",
+      backend_link: "",
       live_link: "",
       short_description: "",
-      images: "", 
+      images: "",
       description: [],
     };
     let desc: string[] = [];
@@ -25,7 +27,7 @@ const getContents = async (type: string) => {
     let arr = myFile.split("\n");
     for (let i = 0; i < arr.length; i++) {
       if (arr[i].split(":")[0] === "id") {
-        obj["id"] = arr[i].split(":")[1];
+        obj["id"] = (arr[i].split(":")[1]);
 
         arr = arr.filter((el) => el !== arr[i]);
       }
@@ -44,6 +46,18 @@ const getContents = async (type: string) => {
 
       if (arr[i].split(":")[0] === "github_link") {
         obj["github_link"] = arr[i].split(":")[1];
+
+        arr = arr.filter((el) => el !== arr[i]);
+      }
+
+      if (arr[i].split(":")[0] === "frontend_link") {
+        obj["frontend_link"] = arr[i].split(":")[1];
+
+        arr = arr.filter((el) => el !== arr[i]);
+      }
+
+      if (arr[i].split(":")[0] === "backend_link") {
+        obj["backend_link"] = arr[i].split(":")[1];
 
         arr = arr.filter((el) => el !== arr[i]);
       }
@@ -84,6 +98,11 @@ const getContents = async (type: string) => {
   for (const file of files) {
     convertToJson(await fs.readFile(fileDirectory + `/${file}`, "utf8"));
   }
+
+  arrayOfFile = arrayOfFile.sort((e1, e2) =>
+    e1.id > e2.id ? 1 : e1.id < e2.id ? -1 : 0
+  );
+
   return arrayOfFile;
 };
 

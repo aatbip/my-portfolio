@@ -26,19 +26,20 @@
 
 .input::placeholder {
   font-family: var(--font-type-heading);
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .input::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   font-family: var(--font-type-heading);
-  font-size: 15px;
+  font-size: 13px;
 }
 .input::-moz-placeholder {
   /* Firefox 19+ */
   font-family: var(--font-type-heading);
-  font-size: 15px;
+  font-size: 13px;
 }
+
 
 @keyframes input {
   0% {

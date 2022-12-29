@@ -1,0 +1,11 @@
+id:03
+heading:quizmey
+github_link:github.com/aatbip/quizmey
+live_link:
+short_description:Select your topic and let the app quiz you! 
+images:
+description:<p><b>API</b></p> 
+opentdb.com/api provides endpoints that can be used with different queries to fetch data of choice.   
+<p><b>Libraries used</b></p>
+<ul> <li>react </li> <li> react-loading-skeleton &#8594; for skeleton loading effect </li><li> uuidv4 &#8594; for generating unique IDs </li><li> react-confetti &#8594; for confetti effects </li></ul>
+

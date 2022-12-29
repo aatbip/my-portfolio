@@ -8,6 +8,7 @@ import {
   unsetLinkText,
   handleShowKeyboard,
   unshowKeyboard,
+  unsetFromAndContent,
 } from "../../redux/input/inputSlice";
 import store from "../../redux/store";
 import styles from "./css/Works.module.css";
@@ -19,6 +20,7 @@ interface IProp {
 const Work: React.FC<IProp> = ({ data }) => {
 
   React.useEffect(() => {
+
     store.dispatch(unsetLinkText());
     store.dispatch(unshowKeyboard());
   }, []);
