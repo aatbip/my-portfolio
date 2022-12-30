@@ -32,10 +32,7 @@
 .aside {
   width: 60%;
   max-width: 900px;
-}
-
-.aside p {
-  line-height: 1.6em;
+  padding: 0 0 10px 0;
 }
 
 .short_description_section {
@@ -70,6 +67,10 @@
 
 @media only screen and (max-width: 450px) {
   .short_description_section {
+    width: 90%;
+  }
+
+  .aside {
     width: 75%;
   }
 }

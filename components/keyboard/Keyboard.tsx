@@ -16,7 +16,7 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const Keyboard: React.FC<IProps> = ({ children }) => {
+const Keyboard: React.FC= () => {
   const [keys, setKeys] = React.useState([
     "Q",
     "W",
@@ -268,7 +268,7 @@ const Keyboard: React.FC<IProps> = ({ children }) => {
         </AnimatePresence>
       )}
 
-      {children}
+      {/* {children} */}
     </>
   );
 };

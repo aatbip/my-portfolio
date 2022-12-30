@@ -27,6 +27,8 @@ const BlogDetail: React.FC<IProp> = ({ data }) => {
     store.dispatch(unshowKeyboard());
   }, []);
 
+  if (!data) return null;
+
   return (
     <>
       <Head>
@@ -56,9 +58,7 @@ const BlogDetail: React.FC<IProp> = ({ data }) => {
           <div className={styles.description_container}>
             {data.description.map((el, ind) => {
               return (
-                <p key={ind}>
-                  <Markup content={el} />
-                </p>
+                <div key={ind} dangerouslySetInnerHTML={{ __html: el }}></div>
               );
             })}
           </div>

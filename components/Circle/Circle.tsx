@@ -11,9 +11,10 @@ interface IProp {
   children: React.ReactNode;
 }
 
-const Circle: React.FC<IProp> = ({ children }) => {
+const Circle: React.FC = () => {
   const nodeRef = React.useRef(null);
   const [boundingBox, setBoundingBox] = React.useState({ top: "", left: "" });
+  const [isMob, setIsMob] = React.useState(false);
 
   const handleStart = (e: any) => {
     setBoundingBox(e.target.getBoundingClientRect());
@@ -27,9 +28,14 @@ const Circle: React.FC<IProp> = ({ children }) => {
     }
   };
 
+  React.useEffect(() => {
+    if (isMobile) setIsMob(true);
+  }, []);
+
+  if (!isMob) return null;
+
   return (
     <>
-      {/* <MobileView> */}
       {isMobile && (
         <Draggable nodeRef={nodeRef} onStart={handleStart} onStop={handleStop}>
           <div
@@ -48,10 +54,6 @@ const Circle: React.FC<IProp> = ({ children }) => {
           </div>
         </Draggable>
       )}
-
-      {/* </MobileView> */}
-
-      {children}
     </>
   );
 };

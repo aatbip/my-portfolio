@@ -25,7 +25,7 @@ const garalama = localFont({
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-type-text",
-  subsets: ["latin"]
+  subsets: ["latin"],
 });
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -37,29 +37,22 @@ export default function App({ Component, pageProps }: AppProps) {
           --font-type-text: ${plusJakartaSans.style.fontFamily};
         }
       `}</style>
-      {/* <main className={`${garalama.variable}`}> */}
-      <Circle>
-        <Keyboard>
-          <Head>
-            <link rel="favicon" href="/favicon.ico" />
-            <meta
-              name="viewport"
-              content="initial-scale=1.0, width=device-width"
-            />
-            <meta
-              name="description"
-              content="Portfolio of Ananta Bipal Subedi | anantabipal.dev"
-            />
-            <meta
-              name="og:title"
-              property="og:title"
-              content="Portfolio of Ananta Bipal Subedi | anantabipal.dev"
-            />
-          </Head>
-          <Component {...pageProps} />
-        </Keyboard>
-      </Circle>
-      {/* </main> */}
+      <Head>
+        <link rel="favicon" href="/favicon.ico" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content="Portfolio of Ananta Bipal Subedi | anantabipal.dev"
+        />
+        <meta
+          name="og:title"
+          property="og:title"
+          content="Portfolio of Ananta Bipal Subedi | anantabipal.dev"
+        />
+      </Head>
+      <Component {...pageProps} />
+      <Circle />
+      <Keyboard />
     </Provider>
   );
 }

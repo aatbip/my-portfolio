@@ -15,6 +15,7 @@ interface IProp {
 const ContentList: React.FC<IProp> = ({ data, from }) => {
   const { linkText, content } = useSelector(selectInput);
   const [link, setLink] = React.useState("");
+
   React.useEffect(() => {
     store.dispatch(unsetLinkText());
   }, []);
@@ -32,7 +33,6 @@ const ContentList: React.FC<IProp> = ({ data, from }) => {
     );
     if (link?.length == 1) setLink(link[0]?.heading);
   }, [linkText]);
-
 
   return (
     <div className={styles.wrapper}>

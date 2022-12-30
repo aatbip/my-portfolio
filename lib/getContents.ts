@@ -89,7 +89,7 @@ const getContents = async (type: string) => {
           }
           desc = [...desc, arr[j]];
 
-          obj["description"] = desc;
+          obj["description"] =  desc;
         }
       }
     }

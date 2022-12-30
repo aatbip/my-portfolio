@@ -22,10 +22,14 @@ interface IProp {
 
 const WorkDetail: React.FC<IProp> = ({ data }) => {
   const { linkText } = useSelector(selectInput);
+  const [isWindow, setIsWindow] = React.useState(false);
   React.useEffect(() => {
     store.dispatch(unsetLinkText());
     store.dispatch(unshowKeyboard());
+
+    if (typeof window !== "undefined") setIsWindow(true);
   }, []);
+
   return (
     <>
       <Head>
@@ -39,7 +43,7 @@ const WorkDetail: React.FC<IProp> = ({ data }) => {
             url={{
               github_link: data.github_link,
               frontend_link: data.frontend_link,
-              backend_link: data.backend_link, 
+              backend_link: data.backend_link,
               live_link: data.live_link,
             }}
           />
@@ -196,11 +200,9 @@ const WorkDetail: React.FC<IProp> = ({ data }) => {
             <p>{data.short_description}</p>
           </div>
           <div className={styles.description_container}>
-            {data?.description.map((el, ind) => {
+            {data.description.map((el, ind) => {
               return (
-                <p key={ind}>
-                  <Markup content={el} />
-                </p>
+                <div key={ind} dangerouslySetInnerHTML={{ __html: el }}></div>
               );
             })}
           </div>
