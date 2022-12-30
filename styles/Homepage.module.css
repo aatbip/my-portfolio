@@ -22,8 +22,8 @@
 
 @media only screen and (max-width: 450px) {
   .homepage {
-    transform: translate(-50%, -120%);
-    top: 40%;
+    transform: translate(-50%, -100%);
+    top: 50%; 
     height: 150px;
     width: 100%; 
   }
