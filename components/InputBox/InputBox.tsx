@@ -32,7 +32,7 @@ interface KeyboardEvent {
 const InputBox: React.FC<IInputBox> = ({ links, content, from, url }) => {
   const inputRef = React.useRef<HTMLInputElement>(null);
   const { linkText, isFocused } = useSelector(selectInput);
-
+  const [ff, setFF] = React.useState(false); //isFirefox?
   const handleKeyDown = (event: KeyboardEvent): void => {
     if (event.key === "@") {
       store.dispatch(setIsFocused(true));
@@ -44,6 +44,7 @@ const InputBox: React.FC<IInputBox> = ({ links, content, from, url }) => {
   };
 
   React.useEffect(() => {
+    if (isFirefox) setFF(true);
     store.dispatch(setFromAndContent({ from, content }));
     if (url) {
       store.dispatch(setURL(url));
@@ -81,7 +82,7 @@ const InputBox: React.FC<IInputBox> = ({ links, content, from, url }) => {
           type="text"
           placeholder="press @ to start..."
           // disabled={!isFocused ? true : false}
-          disabled={isFirefox ? false : !isFocused ? true : false}
+          disabled={ff ? false : !isFocused ? true : false}
           ref={inputRef}
           autoFocus={false}
           inputMode="none"
