@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
+import { isFirefox } from "react-device-detect";
 import { useSelector } from "react-redux";
 import { IContent } from "../../interfaces/interface";
 import {
@@ -20,8 +21,8 @@ interface IInputBox {
   from: string;
   url?: {
     github_link?: string;
-    frontend_link?:string;
-    backend_link?:string; 
+    frontend_link?: string;
+    backend_link?: string;
     live_link?: string;
   };
 }
@@ -42,9 +43,7 @@ const InputBox: React.FC<IInputBox> = ({ links, content, from, url }) => {
     }
   };
 
-
   React.useEffect(() => {
-    
     store.dispatch(setFromAndContent({ from, content }));
     if (url) {
       store.dispatch(setURL(url));
@@ -70,7 +69,10 @@ const InputBox: React.FC<IInputBox> = ({ links, content, from, url }) => {
   return (
     <>
       <form
-        onSubmit={(e) => store.dispatch(handleSubmit({ e, content, from }))}
+        onSubmit={(e) => {
+          e.preventDefault();
+          store.dispatch(handleSubmit());
+        }}
       >
         <input
           className={`${styles.input}  ${
@@ -78,7 +80,8 @@ const InputBox: React.FC<IInputBox> = ({ links, content, from, url }) => {
           }`}
           type="text"
           placeholder="press @ to start..."
-          disabled={!isFocused ? true : false}
+          // disabled={!isFocused ? true : false}
+          disabled={isFirefox ? false : !isFocused ? true : false}
           ref={inputRef}
           autoFocus={false}
           inputMode="none"

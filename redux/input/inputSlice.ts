@@ -99,10 +99,7 @@ const inputSlice = createSlice({
       }
       state.linkText = state.linkText + action.payload.toLowerCase();
     },
-    handleSubmit: (state, action) => {
-      const { e } = action?.payload;
-      e?.preventDefault();
-
+    handleSubmit: (state) => {
       let _link = state.linkText.replace("@", "");
       if (_link.toUpperCase() === "HOME") {
         Router.push("/");
@@ -158,7 +155,8 @@ const inputSlice = createSlice({
         if (_link.toLowerCase() === "linkedin")
           window.open("https://www.linkedin.com/in/anantabipal");
 
-        if (_link.toLowerCase() === "resume") window.open("/file/resume.pdf", "download");
+        if (_link.toLowerCase() === "resume")
+          window.open("/file/resume.pdf", "download");
       }
     },
   },
