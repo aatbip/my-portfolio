@@ -16,7 +16,7 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const Keyboard: React.FC= () => {
+const Keyboard: React.FC = () => {
   const [keys, setKeys] = React.useState([
     "Q",
     "W",
@@ -163,7 +163,10 @@ const Keyboard: React.FC= () => {
                     );
                 })}
                 <div
-                  onClick={(e) => store.dispatch(handleSubmit(e))}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    store.dispatch(handleSubmit());
+                  }}
                   className={`${styles.keys_hover}`}
                   onTouchStartCapture={() => setCaptureSelectedKey(100)}
                   onTouchEndCapture={() => setCaptureSelectedKey(null)}
