@@ -221,7 +221,7 @@ export async function getStaticPaths() {
     return {
       params: {
         work_id: `${el.id}`,
-        work: el.heading.replace(/\s+/g, ""),
+        work: el.heading.toLowerCase().replace(/\s+/g, "-"),
       },
     };
   });
@@ -233,7 +233,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context: any) {
   const { params } = context;
-
   const data = await getOneContent("works", `${params.work}.txt`);
   return {
     props: {

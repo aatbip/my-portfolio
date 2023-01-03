@@ -103,7 +103,7 @@ export async function getStaticPaths() {
     return {
       params: {
         blog_id: `${el.id}`,
-        blog: el.heading.replace(/\s+/g, ""),
+        blog: el.heading.toLowerCase().replace(/\s+/g, "-"),
       },
     };
   });

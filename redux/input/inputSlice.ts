@@ -125,11 +125,11 @@ const inputSlice = createSlice({
         if (link.length == 0 || link.length > 1) return;
         if (state.from === "works")
           Router.push(
-            `/works/${link[0]?.id}/${link[0]?.heading.replace(/\s+/g, "")}`
+            `/works/${link[0]?.id}/${link[0]?.heading.toLowerCase().replace(/\s+/g, "-")}`
           );
         if (state.from === "blogs")
           Router.push(
-            `/blogs/${link[0]?.id}/${link[0]?.heading.replace(/\s+/g, "")}`
+            `/blogs/${link[0]?.id}/${link[0]?.heading.toLowerCase().replace(/\s+/g, "-")}`
           );
       }
 

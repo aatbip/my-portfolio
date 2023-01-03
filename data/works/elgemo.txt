@@ -7,7 +7,7 @@ live_link:
 short_description:Elgemo can create chat rooms by matching random users called as strangers, same like Omegle!
 images:elgemo-1.png elgemo-2.png elgemo-3.png
 description:This app is the outcome of my long time enthusiasm to create a chat app. 
-<h3><b>Technologies Used</b></h3><ul><li>Socket.io</li><li>React</li><li>Redux-Toolkit</li><li>React Router</li><li>Node.js</li><li>Express</li><li>Mongoose</li></ul>
+<h3><b>Technologies Used</b></h3><ul><li>Socket.io</li><li>React</li><li>Redux Toolkit</li><li>React Router</li><li>Node.js</li><li>Express</li><li>Mongoose</li></ul>
 <h3><b>Steps</b></h3>
 When a stranger enters, an "login" event is emitted <code> socket.emit("login", (error) => {}</code> from the socket.io client which is received by the server <code>socket.on("login", cb)</code> and triggers a function to check if any room has less than 2 strangers.
 If no room is found with  less than 2 strangers then a new room is created and a "notification" event is emitted to the client <code> socket.emit("notification", { notice: "Waiting for someone..." })</code> Room is an entry in the database with unique ID and the IDs of the strangers in the room.

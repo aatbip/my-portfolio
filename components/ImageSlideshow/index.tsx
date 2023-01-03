@@ -81,7 +81,7 @@ const ImageSlideshow: React.FC<IProp> = ({ images }) => {
             width="800"
             height="420"
             style={{
-              objectFit: "cover",
+              objectFit: "contain",
             }}
             className={styles.image}
           />
