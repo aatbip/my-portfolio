@@ -1,0 +1,34 @@
+id:02
+date:08/04/2023
+heading:Neovim
+short_description:Neovim - the new Vim. Let's talk about the cool things around Neovim and how to get started. I'll provide links to some fantastic plugins that you might want to check out.
+description:I have been using Vim for quite some time now and I can attest that
+it has helped me code faster and my hands remain in a small area of the keyboard rather than requiring me to switch from the keys to the mouse and back again (crazy).
+Vi is a highly configurable, command-line & keyboard-based text editor originally developed for the Unix OS by Bill Joy. Vim is Vi Improved (do write in the comments about the improvements).
+Neovim is a refactor, continuation, and extension of Vim (https://neovim.io/charter/). It is a project to make Vim more extensible, and usable. Nvim uses Lua for plugins and configs. However, the intention is not to replace VimScript.
+With a package manager like Packer (written in Lua), it is very easy to install and manage plugins. So here's the list of important plugins everyone should be using.
+1. Packer, for managing plugins-<a href="https://github.com/wbthomason/packer.nvim" target="_blank">LINK</a>
+2. nvim-lspconfig, quickstart configurations for the Nvim LSP client-<a href="https://github.com/neovim/nvim-lspconfig" target="_blank">LINK</a>
+3. telescope.nvim, fuzzy finder-<a href="https://github.com/nvim-telescope/telescope.nvim" target="_blank">LINK</a>
+4. nvim-tree.lua, A file explorer tree for neovim written in lua-<a href="https://github.com/nvim-tree/nvim-tree.lua" target="_blank">LINK</a>
+5. nvim-treesitter, Nvim Treesitter configurations and abstraction layer-<a href="https://github.com/nvim-treesitter/nvim-treesitter" target="_blank">LINK</a>
+6. which-key.nvim: displays popup with which keybindings-<a href="https://github.com/folke/which-key.nvim" target="_blank">LINK</a>
+7. Comment.nvim, Smart and powerful comment plugin for neovim-<a href= "https://github.com/numToStr/Comment.nvim" target="_blank">LINK</a>
+8. project.nvim, The superior project management solution for neovim- <a href= "https://github.com/ahmedkhalf/project.nvim" target="_blank">LINK</a>
+9. lualine.nvim, plugin for status line written in pure Lua- <a href= "https://github.com/nvim-lualine/lualine.nvim" target="_blank">LINK</a>
+10. numb.nvim, jump to the line- <a href= "https://github.com/nacro90/numb.nvim" target="_blank">LINK</a>
+11. nvim-spectre, find and replace- <a href="https://github.com/nvim-pack/nvim-spectre" target="_blank">LINK</a>
+12. diffview.nvim, git diffs view- <a href="https://github.com/sindrets/diffview.nvim" target="_blank">LINK</a>
+13. nvim-ts-rainbow, Rainbow parentheses for neovim using tree-sitter- <a href="https://github.com/mrjones2014/nvim-ts-rainbow" target="_blank">LINK</a>
+14. nvim-colorizer, fastest Neovim colorize- <a href="https://github.com/norcalli/nvim-colorizer.lua" target="_blank">LINK</a>
+15. goto-preview: plugin for previewing definitions using floating windows- <a href="https://github.com/rmagatti/goto-preview" target="_blank">LINK</a>
+If you rather want to have default settings pre-configured for you then using one of these will help. You can always add your own configs on top of them. They all come with a taste. Choose what you like.
+1. <a href="https://www.lunarvim.org" target="_blank">Lunarvim</a>
+2. <a href="https://www.nvchad.com" target="_blank">NvChad</a>
+3. <a href="https://www.astronvim.com" target="_blank">AstroNvim</a>
+Find more plugins in the links below:
+<a href="https://www.neovimcraft.com" target="_black">Neovimcraft</a>
+<a href="https://www.nvim-awesome.vercel.app" target="_black">nvim-awesome</a>
+If you're a begineer, here's an awesome tutorial-
+<a href="https://www.youtube.com/watch?v=RZ4p-saaQkc">Link to tutorial</a>
+

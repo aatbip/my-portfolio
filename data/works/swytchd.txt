@@ -1,0 +1,7 @@
+id:01
+heading:Swytchd
+live_link:swytchd.com
+short_description:A mobile-friendly web application for the subscription of electric bikes and car. Swytchd is a startup based in Bengaluru.
+description:One of the projects I am working on as a UI developer at Midas Minds. I am responsible for upgrading and maintaining the application according to the sprint requirement. 
+Swytchd is built in React and Redux. Libraries like MUI and Framer Motion are used for styling and animations, respectively.
+The app has been viewed by 60k+ viewers and conversion rate has been 8% at the time of writing this.

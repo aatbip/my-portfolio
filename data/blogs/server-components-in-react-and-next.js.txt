@@ -1,0 +1,14 @@
+id:01
+date:06/04/2023
+heading:Server Components in React and Next.js
+short_description:Let's discuss what's "NEW" in the world of Next.js and React!
+description:React recently published a new doc (react.dev) and a number of new features starting with React 18. The recently released Next.js 13 totally changed the way we used to do server-side rendering by using React Server Components, one of the new features in React 18. Despite being beta, Next.js 13 has a lot to offer. But first, let's talk about Create React App, an old friend.
+The new React documentation advises against beginning a new React project without a framework. The justifications given in the documentation for not using a bundler to launch a React project center on the capabilities frameworks can provide out of the box for data fetching, routing, server-side rendering, (and much more depending upon the framework) without requiring us to add additional packages, which would increase the bundle size as the app grows. However, the documentation advises using bundlers like Vite or Parcel if we don't want to use a framework furthermore discussing the use cases, benefits, and drawbacks of frameworks like Next.js, Remix, Gatsby, and Expo for creating UI using React.
+Moving to server components, Next.js has modified the initial approach to developing server-rendered apps. Because Next.js now utilizes React Server Component, we no longer need to use getStaticProps() or getServerSideProps(). Unless we mention the "use client" directive at the top, everything in the "new app directory" introduced by Next.js is regarded as server components. Consequently, the design philosophy is to use client and server components together resulting in "shared components". The majority of the components will be shared components that make use of both server and client sides' perks. Several use scenarios include-
+Use server components to - fetch data, access backend resources directly, and keep large dependencies on the server.
+Use client components to - add complex UI, event listeners, state management, and Lifecycle effects
+In my opinion, it is also not necessary to synchronize the state between the client and server using helper libraries like next-redux-wrapper or any other approach. This is so because components with complicated state management requirements can simply be drawn on the client side, and components rendered on the server can use the client component, creating a shared component.
+Finally, pay heed to React IO Libraries! With server-side rendering, it is possible to use the IO libraries. React IO libraries are community-developed lightweight wrappers over the original APIs. Examples of some React IO libraries include react-fs (file system), react-pg (Postgres, why not make a direct db call?), react-fetch (Fetch API), etc.
+References-
+www.react.dev/blog/2020/12/21/data-fetching-with-react-server-components
+www.beta.nextjs.org/docs
