@@ -30,6 +30,7 @@
 }
 
 .aside {
+  word-break: break-word;
   width: 60%;
   max-width: 900px;
   padding: 0 0 10px 0;
