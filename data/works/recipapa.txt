@@ -1,7 +1,7 @@
-id:02
+id:06
 heading:Recipapa
 github_link:github.com/aatbip/recipapa
-live_link:recipapa.netlify.app
+live_link:recipapa.anantabipal.dev
 short_description:Recipapa is a mobile-friendly web app where you can share your recipe and find recipe in stock using ingredient name.
 images:recipapa-1.png recipapa-2.png recipapa-3.png
 description:I made Recipapa in 3 days for fun! It is created using TypeScript, React, Redux Toolkit, Express, and MongoDB on the Node.js runtime. It comes with JWT based secured authentication that makes use of access token and refresh token to persist with sessions. It has a dedicated searching and filtering functionality which can filter through various ingredients that were created by the users.

@@ -1,9 +1,0 @@
-id:11
-heading:Meme Generator
-github_link:github.com/aatbip/meme-generator
-live_link:
-short_description:Generates random meme images and type your meme on top of them. 
-images:meme-generator-1.jpg
-description:Writing meme is fun however it takes a while to find a suitable image and edit the text on it. This project lets you write a meme by generating a random image and typing text on top of it.
-
-The project uses React's useState() hook to handle states between different components. It also uses API from imgflip.com to fetch random images.
