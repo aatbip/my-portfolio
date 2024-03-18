@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import React from "react";
 import InputBox from "../../components/InputBox/InputBox";
 import { unsetLinkText, unshowKeyboard } from "../../redux/input/inputSlice";
@@ -15,7 +16,7 @@ const About = () => {
     <>
       <Head>
         <title>Decorum Technology and Research Center</title>
-        <link rel="favicon" href="/keyboard.svg" />
+        <link rel="favicon" href="/images/decorum_logo_icon.png" />
       </Head>
       <div className={styles.container}>
         <div className={styles.input_box}>
@@ -32,9 +33,9 @@ const About = () => {
           <div className={styles.line}></div>
           <div className={styles.content}>
             <p>
-              Decorum Technology and Research Centre was established in 2021 A.D. by Ananta Bipal Subedi (a software engineer) and Adriana Luisa Dela Cruz (a product designer).
+              Decorum Technology and Research Center was established in 2021 A.D. by Ananta Bipal Subedi (a software engineer) and Adriana Luisa Dela Cruz (a product designer).
               We want to provide top-notch technological solutions to the partners and clients through design, development, and research.
-              We are excellent at 'quickly' forming dedicated teams to solve unique problems in driving any businesses through technology.
+              We are excellent at &ldquo;quickly&rdquo; forming dedicated teams to solve unique problems in driving any businesses through technology.
               Our dedicated teams are contractors distributed around the globe working remotely to solve challenging problems and delivering quality results.
             </p>
             <div style={{ padding: '10px 0px', display: 'flex', alignItems: 'center', flexDirection: 'row', cursor: 'pointer', columnGap: '12px' }}
